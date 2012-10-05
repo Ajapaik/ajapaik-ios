@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1710A61A161F9551003D599B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A619161F9551003D599B /* UIKit.framework */; };
+		1710A61C161F9551003D599B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61B161F9551003D599B /* Foundation.framework */; };
+		1710A61E161F9551003D599B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61D161F9551003D599B /* CoreGraphics.framework */; };
+		1710A624161F9551003D599B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1710A622161F9551003D599B /* InfoPlist.strings */; };
+		1710A626161F9551003D599B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A625161F9551003D599B /* main.m */; };
+		1710A62A161F9551003D599B /* AJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A629161F9551003D599B /* AJAppDelegate.m */; };
+		1710A62C161F9551003D599B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1710A62B161F9551003D599B /* Default.png */; };
+		1710A62E161F9551003D599B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1710A62D161F9551003D599B /* Default@2x.png */; };
+		1710A630161F9551003D599B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1710A62F161F9551003D599B /* Default-568h@2x.png */; };
+		1710A638161F9551003D599B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A637161F9551003D599B /* SenTestingKit.framework */; };
+		1710A639161F9551003D599B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A619161F9551003D599B /* UIKit.framework */; };
+		1710A63A161F9551003D599B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61B161F9551003D599B /* Foundation.framework */; };
+		1710A642161F9551003D599B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1710A640161F9551003D599B /* InfoPlist.strings */; };
+		1710A645161F9551003D599B /* AjapaikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A644161F9551003D599B /* AjapaikTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1710A63B161F9551003D599B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1710A60C161F9551003D599B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1710A614161F9551003D599B;
+			remoteInfo = Ajapaik;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1710A615161F9551003D599B /* Ajapaik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ajapaik.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1710A619161F9551003D599B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1710A61B161F9551003D599B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1710A61D161F9551003D599B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1710A621161F9551003D599B /* Ajapaik-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ajapaik-Info.plist"; sourceTree = "<group>"; };
+		1710A623161F9551003D599B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1710A625161F9551003D599B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1710A627161F9551003D599B /* Ajapaik-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ajapaik-Prefix.pch"; sourceTree = "<group>"; };
+		1710A628161F9551003D599B /* AJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJAppDelegate.h; sourceTree = "<group>"; };
+		1710A629161F9551003D599B /* AJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJAppDelegate.m; sourceTree = "<group>"; };
+		1710A62B161F9551003D599B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1710A62D161F9551003D599B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1710A62F161F9551003D599B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1710A636161F9551003D599B /* AjapaikTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjapaikTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1710A637161F9551003D599B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1710A63F161F9551003D599B /* AjapaikTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AjapaikTests-Info.plist"; sourceTree = "<group>"; };
+		1710A641161F9551003D599B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1710A643161F9551003D599B /* AjapaikTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AjapaikTests.h; sourceTree = "<group>"; };
+		1710A644161F9551003D599B /* AjapaikTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjapaikTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1710A612161F9551003D599B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1710A61A161F9551003D599B /* UIKit.framework in Frameworks */,
+				1710A61C161F9551003D599B /* Foundation.framework in Frameworks */,
+				1710A61E161F9551003D599B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1710A632161F9551003D599B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1710A638161F9551003D599B /* SenTestingKit.framework in Frameworks */,
+				1710A639161F9551003D599B /* UIKit.framework in Frameworks */,
+				1710A63A161F9551003D599B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1710A60A161F9551003D599B = {
+			isa = PBXGroup;
+			children = (
+				1710A61F161F9551003D599B /* Ajapaik */,
+				1710A63D161F9551003D599B /* AjapaikTests */,
+				1710A618161F9551003D599B /* Frameworks */,
+				1710A616161F9551003D599B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1710A616161F9551003D599B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1710A615161F9551003D599B /* Ajapaik.app */,
+				1710A636161F9551003D599B /* AjapaikTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1710A618161F9551003D599B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1710A619161F9551003D599B /* UIKit.framework */,
+				1710A61B161F9551003D599B /* Foundation.framework */,
+				1710A61D161F9551003D599B /* CoreGraphics.framework */,
+				1710A637161F9551003D599B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1710A61F161F9551003D599B /* Ajapaik */ = {
+			isa = PBXGroup;
+			children = (
+				1710A628161F9551003D599B /* AJAppDelegate.h */,
+				1710A629161F9551003D599B /* AJAppDelegate.m */,
+				1710A620161F9551003D599B /* Supporting Files */,
+			);
+			path = Ajapaik;
+			sourceTree = "<group>";
+		};
+		1710A620161F9551003D599B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1710A621161F9551003D599B /* Ajapaik-Info.plist */,
+				1710A622161F9551003D599B /* InfoPlist.strings */,
+				1710A625161F9551003D599B /* main.m */,
+				1710A627161F9551003D599B /* Ajapaik-Prefix.pch */,
+				1710A62B161F9551003D599B /* Default.png */,
+				1710A62D161F9551003D599B /* Default@2x.png */,
+				1710A62F161F9551003D599B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1710A63D161F9551003D599B /* AjapaikTests */ = {
+			isa = PBXGroup;
+			children = (
+				1710A643161F9551003D599B /* AjapaikTests.h */,
+				1710A644161F9551003D599B /* AjapaikTests.m */,
+				1710A63E161F9551003D599B /* Supporting Files */,
+			);
+			path = AjapaikTests;
+			sourceTree = "<group>";
+		};
+		1710A63E161F9551003D599B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1710A63F161F9551003D599B /* AjapaikTests-Info.plist */,
+				1710A640161F9551003D599B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1710A614161F9551003D599B /* Ajapaik */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1710A648161F9551003D599B /* Build configuration list for PBXNativeTarget "Ajapaik" */;
+			buildPhases = (
+				1710A611161F9551003D599B /* Sources */,
+				1710A612161F9551003D599B /* Frameworks */,
+				1710A613161F9551003D599B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ajapaik;
+			productName = Ajapaik;
+			productReference = 1710A615161F9551003D599B /* Ajapaik.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1710A635161F9551003D599B /* AjapaikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1710A64B161F9551003D599B /* Build configuration list for PBXNativeTarget "AjapaikTests" */;
+			buildPhases = (
+				1710A631161F9551003D599B /* Sources */,
+				1710A632161F9551003D599B /* Frameworks */,
+				1710A633161F9551003D599B /* Resources */,
+				1710A634161F9551003D599B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1710A63C161F9551003D599B /* PBXTargetDependency */,
+			);
+			name = AjapaikTests;
+			productName = AjapaikTests;
+			productReference = 1710A636161F9551003D599B /* AjapaikTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1710A60C161F9551003D599B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AJ;
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = 1710A60F161F9551003D599B /* Build configuration list for PBXProject "Ajapaik" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1710A60A161F9551003D599B;
+			productRefGroup = 1710A616161F9551003D599B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1710A614161F9551003D599B /* Ajapaik */,
+				1710A635161F9551003D599B /* AjapaikTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1710A613161F9551003D599B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1710A624161F9551003D599B /* InfoPlist.strings in Resources */,
+				1710A62C161F9551003D599B /* Default.png in Resources */,
+				1710A62E161F9551003D599B /* Default@2x.png in Resources */,
+				1710A630161F9551003D599B /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1710A633161F9551003D599B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1710A642161F9551003D599B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1710A634161F9551003D599B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1710A611161F9551003D599B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1710A626161F9551003D599B /* main.m in Sources */,
+				1710A62A161F9551003D599B /* AJAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1710A631161F9551003D599B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1710A645161F9551003D599B /* AjapaikTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1710A63C161F9551003D599B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1710A614161F9551003D599B /* Ajapaik */;
+			targetProxy = 1710A63B161F9551003D599B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1710A622161F9551003D599B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1710A623161F9551003D599B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1710A640161F9551003D599B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1710A641161F9551003D599B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1710A646161F9551003D599B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1710A647161F9551003D599B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1710A649161F9551003D599B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ajapaik/Ajapaik-Prefix.pch";
+				INFOPLIST_FILE = "Ajapaik/Ajapaik-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1710A64A161F9551003D599B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ajapaik/Ajapaik-Prefix.pch";
+				INFOPLIST_FILE = "Ajapaik/Ajapaik-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1710A64C161F9551003D599B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ajapaik.app/Ajapaik";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ajapaik/Ajapaik-Prefix.pch";
+				INFOPLIST_FILE = "AjapaikTests/AjapaikTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1710A64D161F9551003D599B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ajapaik.app/Ajapaik";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ajapaik/Ajapaik-Prefix.pch";
+				INFOPLIST_FILE = "AjapaikTests/AjapaikTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1710A60F161F9551003D599B /* Build configuration list for PBXProject "Ajapaik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1710A646161F9551003D599B /* Debug */,
+				1710A647161F9551003D599B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1710A648161F9551003D599B /* Build configuration list for PBXNativeTarget "Ajapaik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1710A649161F9551003D599B /* Debug */,
+				1710A64A161F9551003D599B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1710A64B161F9551003D599B /* Build configuration list for PBXNativeTarget "AjapaikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1710A64C161F9551003D599B /* Debug */,
+				1710A64D161F9551003D599B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1710A60C161F9551003D599B /* Project object */;
+}
