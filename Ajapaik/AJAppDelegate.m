@@ -7,14 +7,16 @@
 //
 
 #import "AJAppDelegate.h"
+#import "AJMapViewController.h"
 
 @implementation AJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	UIViewController *viewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController" bundle:[NSBundle mainBundle]];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+	self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
