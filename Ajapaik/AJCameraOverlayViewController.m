@@ -7,10 +7,12 @@
 //
 
 #import "AJCameraOverlayViewController.h"
+#import "AJPhotoPreviewView.h"
 
 @interface AJCameraOverlayViewController ()
 
 @property (nonatomic) CGFloat initialAlpha;
+@property (nonatomic) CGFloat initialZoomScale;
 
 @end
 
@@ -44,7 +46,7 @@
 
 - (void)loadPhotoWithID:(NSNumber *)ID
 {
-	self.imageView.image = nil;
+	self.previewView.image = nil;
 	
 	NSURL *popupURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.ajapaik.ee/foto/%@/", ID]];
 	NSURLRequest *popupRequest = [NSURLRequest requestWithURL:popupURL];
@@ -59,16 +61,11 @@
 							   [NSURLConnection sendAsynchronousRequest:photoRequest queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 								   UIImage *image = [UIImage imageWithData:data];
 								   dispatch_async(dispatch_get_main_queue(), ^{
-									   self.imageView.image = image;
+									   self.previewView.image = image;
 								   });
 							   }];
 							   NSLog(@"%@", photoURL);
 						   }];
-}
-
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-	return self.imageView;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -78,18 +75,21 @@
 
 - (IBAction)pitch:(id)sender
 {
-	NSLog(@"!");
+	UIPinchGestureRecognizer *pinchGestureRecognizer = (UIPinchGestureRecognizer *)sender;
+	if (pinchGestureRecognizer.state == UIGestureRecognizerStateBegan) self.initialZoomScale = self.previewView.zoomScale;
+	
+	self.previewView.zoomScale = self.initialZoomScale * pinchGestureRecognizer.scale;
 }
 
 - (IBAction)pan:(id)sender
 {
 	UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer *)sender;
-	if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) self.initialAlpha = self.imageView.alpha;
+	if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) self.initialAlpha = self.previewView.alpha;
 	
-	CGPoint translation = [panGestureRecognizer translationInView:self.imageView];
+	CGPoint translation = [panGestureRecognizer translationInView:self.previewView];
 	CGFloat length = translation.y;// sqrtf(translation.x * translation.x + translation.y * translation.y);
 	CGFloat delta = length / 150.0f;
-	self.imageView.alpha = MIN(MAX(self.initialAlpha + delta, 0), 1.0f);
+	self.previewView.alpha = MIN(MAX(self.initialAlpha + delta, 0), 1.0f);
 }
 
 @end

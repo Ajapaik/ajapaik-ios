@@ -38,6 +38,7 @@
 		174F668216204A780058AF03 /* AJPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A658161F9C70003D599B /* AJPhotoAnnotation.m */; };
 		174F668316204C640058AF03 /* AJCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A65B161FA57F003D599B /* AJCameraOverlayViewController.m */; };
 		174F668416204C710058AF03 /* AJCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1710A65C161FA57F003D599B /* AJCameraOverlayViewController.xib */; };
+		174F6692162054BE0058AF03 /* AJPhotoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		1710A65B161FA57F003D599B /* AJCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJCameraOverlayViewController.m; path = /Users/amjaliks/xcode/Ajapaik/Ajapaik/AJCameraOverlayViewController.m; sourceTree = "<absolute>"; };
 		1710A65C161FA57F003D599B /* AJCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AJCameraOverlayViewController.xib; path = /Users/amjaliks/xcode/Ajapaik/Ajapaik/AJCameraOverlayViewController.xib; sourceTree = "<absolute>"; };
 		1710A663161FB0BA003D599B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		174F6690162054BE0058AF03 /* AJPhotoPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJPhotoPreviewView.h; sourceTree = "<group>"; };
+		174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhotoPreviewView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 				1710A65A161FA57F003D599B /* AJCameraOverlayViewController.h */,
 				1710A65B161FA57F003D599B /* AJCameraOverlayViewController.m */,
 				1710A65C161FA57F003D599B /* AJCameraOverlayViewController.xib */,
+				174F6690162054BE0058AF03 /* AJPhotoPreviewView.h */,
+				174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */,
 			);
 			name = CameraView;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				174F668016204A520058AF03 /* AJMapViewController.m in Sources */,
 				174F668216204A780058AF03 /* AJPhotoAnnotation.m in Sources */,
 				174F668316204C640058AF03 /* AJCameraOverlayViewController.m in Sources */,
+				174F6692162054BE0058AF03 /* AJPhotoPreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
