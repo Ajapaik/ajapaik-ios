@@ -26,8 +26,8 @@
 		1710A654161F9685003D599B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A653161F9685003D599B /* MapKit.framework */; };
 		1710A656161F968B003D599B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A655161F968B003D599B /* CoreLocation.framework */; };
 		1710A659161F9C70003D599B /* AJPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A658161F9C70003D599B /* AJPhotoAnnotation.m */; };
-		1710A65D161FA57F003D599B /* AJCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A65B161FA57F003D599B /* AJCameraViewController.m */; };
-		1710A65E161FA57F003D599B /* AJCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1710A65C161FA57F003D599B /* AJCameraViewController.xib */; };
+		1710A65D161FA57F003D599B /* AJCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A65B161FA57F003D599B /* AJCameraOverlayViewController.m */; };
+		1710A65E161FA57F003D599B /* AJCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1710A65C161FA57F003D599B /* AJCameraOverlayViewController.xib */; };
 		1710A664161FB0BA003D599B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A663161FB0BA003D599B /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,9 +68,9 @@
 		1710A655161F968B003D599B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1710A657161F9C70003D599B /* AJPhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJPhotoAnnotation.h; sourceTree = "<group>"; };
 		1710A658161F9C70003D599B /* AJPhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhotoAnnotation.m; sourceTree = "<group>"; };
-		1710A65A161FA57F003D599B /* AJCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJCameraViewController.h; sourceTree = "<group>"; };
-		1710A65B161FA57F003D599B /* AJCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJCameraViewController.m; sourceTree = "<group>"; };
-		1710A65C161FA57F003D599B /* AJCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJCameraViewController.xib; sourceTree = "<group>"; };
+		1710A65A161FA57F003D599B /* AJCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJCameraOverlayViewController.h; sourceTree = "<group>"; };
+		1710A65B161FA57F003D599B /* AJCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJCameraOverlayViewController.m; sourceTree = "<group>"; };
+		1710A65C161FA57F003D599B /* AJCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJCameraOverlayViewController.xib; sourceTree = "<group>"; };
 		1710A663161FB0BA003D599B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -145,9 +145,9 @@
 				1710A650161F9589003D599B /* AJMapViewController.xib */,
 				1710A657161F9C70003D599B /* AJPhotoAnnotation.h */,
 				1710A658161F9C70003D599B /* AJPhotoAnnotation.m */,
-				1710A65A161FA57F003D599B /* AJCameraViewController.h */,
-				1710A65B161FA57F003D599B /* AJCameraViewController.m */,
-				1710A65C161FA57F003D599B /* AJCameraViewController.xib */,
+				1710A65A161FA57F003D599B /* AJCameraOverlayViewController.h */,
+				1710A65B161FA57F003D599B /* AJCameraOverlayViewController.m */,
+				1710A65C161FA57F003D599B /* AJCameraOverlayViewController.xib */,
 			);
 			path = Ajapaik;
 			sourceTree = "<group>";
@@ -261,7 +261,7 @@
 				1710A62E161F9551003D599B /* Default@2x.png in Resources */,
 				1710A630161F9551003D599B /* Default-568h@2x.png in Resources */,
 				1710A652161F9589003D599B /* AJMapViewController.xib in Resources */,
-				1710A65E161FA57F003D599B /* AJCameraViewController.xib in Resources */,
+				1710A65E161FA57F003D599B /* AJCameraOverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +300,7 @@
 				1710A62A161F9551003D599B /* AJAppDelegate.m in Sources */,
 				1710A651161F9589003D599B /* AJMapViewController.m in Sources */,
 				1710A659161F9C70003D599B /* AJPhotoAnnotation.m in Sources */,
-				1710A65D161FA57F003D599B /* AJCameraViewController.m in Sources */,
+				1710A65D161FA57F003D599B /* AJCameraOverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

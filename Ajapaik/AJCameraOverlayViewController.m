@@ -6,13 +6,15 @@
 //
 //
 
-#import "AJCameraViewController.h"
+#import "AJCameraOverlayViewController.h"
 
-@interface AJCameraViewController ()
+@interface AJCameraOverlayViewController ()
+
+@property (nonatomic) CGFloat initialAlpha;
 
 @end
 
-@implementation AJCameraViewController
+@implementation AJCameraOverlayViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	self.wantsFullScreenLayout = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,15 +60,36 @@
 								   UIImage *image = [UIImage imageWithData:data];
 								   dispatch_async(dispatch_get_main_queue(), ^{
 									   self.imageView.image = image;
-									   self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-									   self.scrollView.contentSize = image.size;
-									   self.scrollView.minimumZoomScale = 0.0f;
-									   self.scrollView.maximumZoomScale = 2.0f;
-									   [self.scrollView zoomToRect:self.imageView.bounds animated:NO];
 								   });
 							   }];
 							   NSLog(@"%@", photoURL);
 						   }];
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+	return self.imageView;
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	
+}
+
+- (IBAction)pitch:(id)sender
+{
+	NSLog(@"!");
+}
+
+- (IBAction)pan:(id)sender
+{
+	UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer *)sender;
+	if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) self.initialAlpha = self.imageView.alpha;
+	
+	CGPoint translation = [panGestureRecognizer translationInView:self.imageView];
+	CGFloat length = translation.y;// sqrtf(translation.x * translation.x + translation.y * translation.y);
+	CGFloat delta = length / 150.0f;
+	self.imageView.alpha = MIN(MAX(self.initialAlpha + delta, 0), 1.0f);
 }
 
 @end
