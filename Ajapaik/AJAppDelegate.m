@@ -7,16 +7,18 @@
 //
 
 #import "AJAppDelegate.h"
-#import "AJMapViewController.h"
+#import "AJMainViewController.h"
 
 @implementation AJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	UIViewController *viewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController" bundle:[NSBundle mainBundle]];
+	UIViewController *viewController = [[AJMainViewController alloc] initWithNibName:@"AJMainViewController" bundle:nil];
 	
+    UINavigationController *mainNavigationController =  [[UINavigationController alloc] initWithRootViewController:viewController];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	self.window.rootViewController = viewController;
+	self.window.rootViewController = mainNavigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

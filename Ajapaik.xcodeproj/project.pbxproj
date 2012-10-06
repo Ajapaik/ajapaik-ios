@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A09574E1620120E00158B4F /* AJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A09574C1620120E00158B4F /* AJMainViewController.m */; };
+		0A09574F1620120E00158B4F /* AJMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A09574D1620120E00158B4F /* AJMainViewController.xib */; };
+		0A09575716201A1300158B4F /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A09575616201A1300158B4F /* PhotoTableViewCell.xib */; };
+		0A09575B162023B800158B4F /* AJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A095759162023B800158B4F /* AJTableViewController.m */; };
+		0A09575C162023B800158B4F /* AJTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A09575A162023B800158B4F /* AJTableViewController.xib */; };
 		1710A61A161F9551003D599B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A619161F9551003D599B /* UIKit.framework */; };
 		1710A61C161F9551003D599B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61B161F9551003D599B /* Foundation.framework */; };
 		1710A61E161F9551003D599B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61D161F9551003D599B /* CoreGraphics.framework */; };
@@ -42,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A09574B1620120E00158B4F /* AJMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJMainViewController.h; sourceTree = "<group>"; };
+		0A09574C1620120E00158B4F /* AJMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJMainViewController.m; sourceTree = "<group>"; };
+		0A09574D1620120E00158B4F /* AJMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJMainViewController.xib; sourceTree = "<group>"; };
+		0A09575616201A1300158B4F /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		0A095758162023B800158B4F /* AJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJTableViewController.h; sourceTree = "<group>"; };
+		0A095759162023B800158B4F /* AJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJTableViewController.m; sourceTree = "<group>"; };
+		0A09575A162023B800158B4F /* AJTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJTableViewController.xib; sourceTree = "<group>"; };
 		1710A615161F9551003D599B /* Ajapaik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ajapaik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1710A619161F9551003D599B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1710A61B161F9551003D599B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +160,13 @@
 				1710A65A161FA57F003D599B /* AJCameraViewController.h */,
 				1710A65B161FA57F003D599B /* AJCameraViewController.m */,
 				1710A65C161FA57F003D599B /* AJCameraViewController.xib */,
+				0A09574B1620120E00158B4F /* AJMainViewController.h */,
+				0A09574C1620120E00158B4F /* AJMainViewController.m */,
+				0A09574D1620120E00158B4F /* AJMainViewController.xib */,
+				0A09575616201A1300158B4F /* PhotoTableViewCell.xib */,
+				0A095758162023B800158B4F /* AJTableViewController.h */,
+				0A095759162023B800158B4F /* AJTableViewController.m */,
+				0A09575A162023B800158B4F /* AJTableViewController.xib */,
 			);
 			path = Ajapaik;
 			sourceTree = "<group>";
@@ -262,6 +281,9 @@
 				1710A630161F9551003D599B /* Default-568h@2x.png in Resources */,
 				1710A652161F9589003D599B /* AJMapViewController.xib in Resources */,
 				1710A65E161FA57F003D599B /* AJCameraViewController.xib in Resources */,
+				0A09574F1620120E00158B4F /* AJMainViewController.xib in Resources */,
+				0A09575716201A1300158B4F /* PhotoTableViewCell.xib in Resources */,
+				0A09575C162023B800158B4F /* AJTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +323,8 @@
 				1710A651161F9589003D599B /* AJMapViewController.m in Sources */,
 				1710A659161F9C70003D599B /* AJPhotoAnnotation.m in Sources */,
 				1710A65D161FA57F003D599B /* AJCameraViewController.m in Sources */,
+				0A09574E1620120E00158B4F /* AJMainViewController.m in Sources */,
+				0A09575B162023B800158B4F /* AJTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +492,7 @@
 				1710A64A161F9551003D599B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1710A64B161F9551003D599B /* Build configuration list for PBXNativeTarget "AjapaikTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +501,7 @@
 				1710A64D161F9551003D599B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
