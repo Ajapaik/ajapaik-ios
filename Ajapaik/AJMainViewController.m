@@ -49,7 +49,7 @@
 - (void)mapButtonClicked
 {
     [UIView beginAnimations:@"View Flip" context:nil];
-    [UIView setAnimationDuration:0.7];
+    [UIView setAnimationDuration:0.5];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     if (self.tableViewController.view.superview == nil) {
         if (self.tableViewController == nil) {

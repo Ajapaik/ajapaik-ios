@@ -7,12 +7,14 @@
 //
 
 #import "AJTableViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface AJTableViewController ()
 
 @end
 
 @implementation AJTableViewController
+@synthesize delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,7 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    _userLocation = nil;
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy =kCLLocationAccuracyHundredMeters;
+    [_locationManager startUpdatingLocation];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -40,20 +47,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Actions
+-(void) setPhotos:(NSArray *)photos
+{
+    _photos = photos;
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [_photos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,50 +73,46 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    AJPhoto *photo = [_photos objectAtIndex:indexPath.row];
     
-    // Configure the cell...
+    UILabel* cellNameLabel = (UILabel*)[cell viewWithTag:1];
+    cellNameLabel.text = photo.name;
+    UILabel* cellAddressLabel = (UILabel*) [cell viewWithTag:2];
+    cellAddressLabel.text = photo.address;
     
+    /*UILabel* cellLocationLabel = (UILabel*) [cell viewWithTag:3];
+     if(_userLocation)
+     {
+        NSString *distanceString = [[NSString alloc] initWithFormat:@"%gm", [photo.location distanceFromLocation:_userLocation]];
+        cellLocationLabel.text  = distanceString;
+     }*/
+    
+    UIImageView *photoImage = (UIImageView*)[cell viewWithTag:3];
+    UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)[cell viewWithTag:4];
+    [photoImage setImageWithURL: photo.imageURL success:^(UIImage *image, BOOL cached) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            indicator.hidden = YES;
+            [indicator stopAnimating];
+        });
+    } failure:^(NSError *error) {
+        // do nothing right now
+    }];
+    
+    UIImage *image = photoImage.image;
+    if(image) {
+        indicator.hidden = YES;
+        [indicator stopAnimating];
+    } else {
+        indicator.hidden = NO;
+        [indicator startAnimating];
+    }
+    [photoImage setNeedsDisplay];
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -119,6 +125,26 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - Location Manager
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    _userLocation = newLocation;//[[CLLocation alloc] initWithLatitude:60.07 longitude:30.19];
+    [self.tableView reloadData];
+}
+
+-(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSString *errorType = (error.code == kCLErrorDenied) ? @"Access Denied" : @"Unknown Error";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting Location"
+                                                    message:errorType
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Okay"
+                                          otherButtonTitles:nil];
+    [alert show];
+    [self.tableView reloadData];
 }
 
 @end
