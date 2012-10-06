@@ -7,6 +7,7 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "AJMapViewController.h"
 #import "AJPhotoAnnotation.h"
 #import "AJCameraOverlayViewController.h"
@@ -18,6 +19,7 @@
 
 @property (nonatomic) BOOL userLocationCentered;
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) NSNumber *photoID;
 
 @end
 
@@ -36,28 +38,28 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-	self.mapView.showsUserLocation = YES;
+//	self.mapView.showsUserLocation = YES;
 	
-	NSURL *mapURL = [NSURL URLWithString:@"http://www.ajapaik.ee/kaart/?city=2"];
-	NSURLRequest *request = [NSURLRequest requestWithURL:mapURL];
-	[NSURLConnection sendAsynchronousRequest:request
-                                     queue:[[NSOperationQueue alloc] init]
-                         completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                           if (data) {
-                             NSString *mapData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                             NSRange start = [mapData rangeOfString:@"[["];
-                             NSRange end = [mapData rangeOfString:@"]]"];
-                             NSString *photos = [mapData substringWithRange:NSMakeRange(start.location + 2, end.location - start.location - 2)];
-                             
-                             dispatch_async(dispatch_get_main_queue(), ^{
-                               for (NSString *photo in [photos componentsSeparatedByString:@"], ["]) {
-                                 NSLog(@"photo: %@", photo);
-                                 [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithString:photo]];
-                               }
-                               [self zoomToFitMapAnnotations];
-                             });
-                           }
-                         }];
+//	NSURL *mapURL = [NSURL URLWithString:@"http://www.ajapaik.ee/kaart/?city=2"];
+//	NSURLRequest *request = [NSURLRequest requestWithURL:mapURL];
+//	[NSURLConnection sendAsynchronousRequest:request
+//                                     queue:[[NSOperationQueue alloc] init]
+//                         completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//                           if (data) {
+//                             NSString *mapData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                             NSRange start = [mapData rangeOfString:@"[["];
+//                             NSRange end = [mapData rangeOfString:@"]]"];
+//                             NSString *photos = [mapData substringWithRange:NSMakeRange(start.location + 2, end.location - start.location - 2)];
+//                             
+//                             dispatch_async(dispatch_get_main_queue(), ^{
+//                               for (NSString *photo in [photos componentsSeparatedByString:@"], ["]) {
+//                                 NSLog(@"photo: %@", photo);
+//                                 [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithString:photo]];
+//                               }
+//                               [self zoomToFitMapAnnotations];
+//                             });
+//                           }
+//                         }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +67,18 @@
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Actions
+
+-(void) setPhotos:(NSArray *)photos
+{
+    for (AJPhoto *photo in photos) {
+        [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithPhoto:(AJPhoto *) photo]];
+    }
+    [self zoomToFitMapAnnotations];
+}
+
+#pragma mark -  Map View
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -87,11 +101,13 @@
 	
 	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
 	
-	[self presentModalViewController:picker animated:YES];
-	
 	self.locationManager = [[CLLocationManager alloc] init];
 	[self.locationManager startUpdatingLocation];
 	[self.locationManager startUpdatingHeading];
+	
+	self.photoID = [(AJPhotoAnnotation *)view.annotation ID];
+
+	[self presentModalViewController:picker animated:YES];
     
     //TODO: put here this code to load photo view 
     //[self.delegate photoChoosen:[(AJPhotoAnnotation *) view.annotation photo]];
@@ -110,7 +126,8 @@
 	CLLocation *location = self.locationManager.location;
 	CLHeading *heading = self.locationManager.heading;
 	
-	NSString *text = [NSString stringWithFormat:@"lat: %.6f, lon: %.6f, heading:%.2f",
+	NSString *text = [NSString stringWithFormat:@"ID: %@, lat: %.6f, lon: %.6f, heading: %.2f",
+					  self.photoID,
 					  location.coordinate.latitude,
 					  location.coordinate.longitude,
 					  heading.trueHeading];
@@ -130,6 +147,16 @@
 	if (!view) {
 		view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"photo"];
 		view.canShowCallout = YES;
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.ajapaik.ee/foto/%@/", [(AJPhotoAnnotation*) annotation ID]]];
+//        NSLog(@"%@", url);
+//        UIImageView *thumbnailView = [[UIImageView alloc] init];
+//        [thumbnailView setFrame:CGRectMake(0, 0, 30, 30)];
+//        [thumbnailView setImageWithURL:url success:^(UIImage *image, BOOL cached) {
+//            thumbnailView.image = image;
+//        } failure:^(NSError *error) {
+//            //do nothing here
+//        }];
+//        view.leftCalloutAccessoryView = thumbnailView;
 		view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 	} else {
 		view.annotation = annotation;

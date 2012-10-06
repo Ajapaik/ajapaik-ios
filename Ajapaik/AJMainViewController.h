@@ -12,8 +12,10 @@
 #import "AJMainSubViewDelegate.h"
 #import "AJDetailViewController.h"
 
-@interface AJMainViewController : UIViewController<AJMainSubViewDelegate> {
- @private
+@interface AJMainViewController : UIViewController<AJMainSubViewDelegate>
+{
+    @private
+    NSArray *_oldPhotos;
   NSMutableArray *imageUrls;
 }
 @property (nonatomic,retain) AJMapViewController* mapViewController;
