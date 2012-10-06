@@ -11,6 +11,8 @@
 #import "AJDetailViewController.h"
 #import "AJCameraOverlayViewController.h"
 
+#define BOUNDARY @"ASDasofiauoiewruaidpfadskfhjlads"
+
 @interface AJDetailViewController ()
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
@@ -72,7 +74,8 @@
 	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
 	
 	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-	[UIImageJPEGRepresentation(image, 1.0) writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
+	NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+	[imageData writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
 	
 	CLLocation *location = self.locationManager.location;
 	CLHeading *heading = self.locationManager.heading;
@@ -86,6 +89,33 @@
          atomically:YES
            encoding:NSUTF8StringEncoding
               error:nil];
+	
+	NSString* MultiPartContentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", BOUNDARY];
+    
+	NSMutableData *postData = [NSMutableData data];
+	[postData appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"user_file[]\"; filename=\"%d.jpg\"\r\n", 1] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:imageData];
+	[postData appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"lat\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[[NSString stringWithFormat:@"%.6f", location.coordinate.latitude] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"lon\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[[NSString stringWithFormat:@"%.6f", location.coordinate.longitude] dataUsingEncoding:NSUTF8StringEncoding]];
+	[postData appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];
+	
+    NSString *baseurl = [NSString stringWithFormat:@"http://www.ajapaik.ee/foto/%d/upload/", self.oldPhotoObject.ID];
+    NSURL *url = [NSURL URLWithString:baseurl];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+	
+    [urlRequest setHTTPMethod: @"POST"];
+  	[urlRequest setValue:MultiPartContentType forHTTPHeaderField: @"Content-Type"];
+    [urlRequest setHTTPBody:postData];
+	
+    NSError *error;
+    NSURLResponse *response;
+	NSData* result = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
