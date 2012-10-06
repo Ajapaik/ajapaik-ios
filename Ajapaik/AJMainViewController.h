@@ -11,12 +11,16 @@
 #import "AJTableViewController.h"
 #import "AJMainSubViewDelegate.h"
 
-@interface AJMainViewController : UIViewController<AJMainSubViewDelegate>
+@class AJCameraOverlayViewController;
+
+@interface AJMainViewController : UIViewController <AJMainSubViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     @private
     NSArray *_oldPhotos;
 }
-@property (nonatomic,retain) AJMapViewController* mapViewController;
+@property (nonatomic, retain) IBOutlet AJMapViewController* mapViewController;
+@property (nonatomic, retain) IBOutlet AJCameraOverlayViewController *cameraOverlayViewController;
 @property (nonatomic,retain) AJTableViewController* tableViewController;
+
 
 @end

@@ -10,7 +10,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AJMapViewController.h"
 #import "AJPhotoAnnotation.h"
-#import "AJCameraOverlayViewController.h"
 
 #define MINIMUM_ZOOM_ARC 0.0142
 #define ANNOTATION_REGION_PAD_FACTOR 1.11
@@ -18,8 +17,6 @@
 @interface AJMapViewController ()
 
 @property (nonatomic) BOOL userLocationCentered;
-@property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic, retain) NSNumber *photoID;
 
 @end
 
@@ -90,53 +87,7 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-	picker.delegate = self;
-	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-	picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-	picker.showsCameraControls = YES;
-	picker.wantsFullScreenLayout = YES;
-	picker.allowsEditing = NO;
-	picker.cameraOverlayView = self.cameraOverlayViewController.view;
-	
-	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
-	
-	self.locationManager = [[CLLocationManager alloc] init];
-	[self.locationManager startUpdatingLocation];
-	[self.locationManager startUpdatingHeading];
-	
-	self.photoID = [(AJPhotoAnnotation *)view.annotation ID];
-
-	[self presentModalViewController:picker animated:YES];
-    
-    //TODO: put here this code to load photo view 
-    //[self.delegate photoChoosen:[(AJPhotoAnnotation *) view.annotation photo]];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-	NSString *filename = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
-	
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
-	
-	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-	[UIImageJPEGRepresentation(image, 1.0) writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
-	
-	CLLocation *location = self.locationManager.location;
-	CLHeading *heading = self.locationManager.heading;
-	
-	NSString *text = [NSString stringWithFormat:@"ID: %@, lat: %.6f, lon: %.6f, heading: %.2f",
-					  self.photoID,
-					  location.coordinate.latitude,
-					  location.coordinate.longitude,
-					  heading.trueHeading];
-	[text writeToFile:[path stringByAppendingPathExtension:@"txt"]
-		   atomically:YES
-			 encoding:NSUTF8StringEncoding
-				error:nil];
-	
-	[self dismissModalViewControllerAnimated:YES];
+    [self.delegate photoChoosen:[(AJPhotoAnnotation *) view.annotation photo]];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
