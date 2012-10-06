@@ -17,6 +17,7 @@
 @synthesize imageURL = _imageURL;
 @synthesize thumnailURL = _thumnailURL;
 
+
 -(id)initWithNSDictionary:(NSDictionary *)data {
     self = [super init];
     if (self) {

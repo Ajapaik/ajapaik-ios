@@ -16,9 +16,6 @@
 		0A09577B1620437D00158B4F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A09577A1620437D00158B4F /* CoreImage.framework */; };
 		0A09577D1620438A00158B4F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A09577C1620438A00158B4F /* ImageIO.framework */; };
 		0A0957A116204BA200158B4F /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A09579C16204B7F00158B4F /* libSDWebImageARC.a */; };
-		0A09580216207E9600158B4F /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A0957FE16207E9600158B4F /* CHANGELOG.md */; };
-		0A09580316207E9600158B4F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A09580016207E9600158B4F /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0A09580416207E9600158B4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A09580116207E9600158B4F /* README.md */; };
 		1710A61A161F9551003D599B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A619161F9551003D599B /* UIKit.framework */; };
 		1710A61C161F9551003D599B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61B161F9551003D599B /* Foundation.framework */; };
 		1710A61E161F9551003D599B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61D161F9551003D599B /* CoreGraphics.framework */; };
@@ -111,10 +108,6 @@
 		0A0957B51620544600158B4F /* AJMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJMapViewController.h; sourceTree = "<group>"; };
 		0A0957B61620544600158B4F /* AJMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJMapViewController.m; sourceTree = "<group>"; };
 		0A0957B71620544600158B4F /* AJMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJMapViewController.xib; sourceTree = "<group>"; };
-		0A0957FE16207E9600158B4F /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		0A0957FF16207E9600158B4F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		0A09580016207E9600158B4F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		0A09580116207E9600158B4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1710A615161F9551003D599B /* Ajapaik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ajapaik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1710A619161F9551003D599B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1710A61B161F9551003D599B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -259,22 +252,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A0957FA16207DA100158B4F /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				0A0957FE16207E9600158B4F /* CHANGELOG.md */,
-				0A0957FF16207E9600158B4F /* JSONKit.h */,
-				0A09580016207E9600158B4F /* JSONKit.m */,
-				0A09580116207E9600158B4F /* README.md */,
-			);
-			name = JSONKit;
-			sourceTree = "<group>";
-		};
 		1710A60A161F9551003D599B = {
 			isa = PBXGroup;
 			children = (
 				0A09579016204B7E00158B4F /* SDWebImage.xcodeproj */,
-				0A0957FA16207DA100158B4F /* JSONKit */,
 				1710A61F161F9551003D599B /* Ajapaik */,
 				1710A63D161F9551003D599B /* AjapaikTests */,
 				1710A618161F9551003D599B /* Frameworks */,
@@ -477,8 +458,6 @@
 				174F668416204C710058AF03 /* (null) in Resources */,
 				5B493A8616205C850038B76B /* AJMapViewController.xib in Resources */,
 				5B493A8816205DE10038B76B /* AJCameraOverlayViewController.xib in Resources */,
-				0A09580216207E9600158B4F /* CHANGELOG.md in Resources */,
-				0A09580416207E9600158B4F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +505,6 @@
 				5B493A8516205C740038B76B /* AJMapViewController.m in Sources */,
 				5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */,
 				5B493A8916205DE70038B76B /* AJCameraOverlayViewController.m in Sources */,
-				0A09580316207E9600158B4F /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

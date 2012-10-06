@@ -14,8 +14,7 @@
 {
 	if ((self = [self init])) {
 		self.title = [NSString stringWithFormat:@"%d", photo.ID];
-		self.ID = [NSNumber numberWithInteger:photo.ID];
-        
+        self.photo = photo;
 		self.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
 	}
 	return self;
