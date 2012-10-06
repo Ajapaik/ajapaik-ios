@@ -82,4 +82,11 @@
 	self.previewView.alpha = MIN(MAX(self.initialAlpha + delta, 0), 1.0f);
 }
 
+- (IBAction)tap:(id)sender
+{
+	[UIView animateWithDuration:0.25f animations:^{
+		self.previewView.alpha = self.previewView.alpha == 1.0f ? 0.0f : 1.0f;
+	}];
+}
+
 @end
