@@ -16,6 +16,7 @@
 		NSArray *components = [string componentsSeparatedByString:@", "];
 		self.title = [components objectAtIndex:0];
 		self.ID = [NSNumber numberWithInteger:[self.title integerValue]];
+        
 		self.coordinate = CLLocationCoordinate2DMake([[components objectAtIndex:2] doubleValue],
                                                  [[components objectAtIndex:1] doubleValue]);
 	}
