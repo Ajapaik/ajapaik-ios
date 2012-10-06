@@ -18,6 +18,6 @@
 @property (nonatomic) int cityID;
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSURL *imageURL;
-@property (nonatomic, retain) NSURL *thumnailURL;
+@property (nonatomic, retain) NSURL *thumbnailURL;
 
 @end

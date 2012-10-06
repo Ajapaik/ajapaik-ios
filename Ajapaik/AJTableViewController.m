@@ -96,7 +96,7 @@
     
     UIImageView *photoImage = (UIImageView*)[cell viewWithTag:3];
     UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)[cell viewWithTag:4];
-    [photoImage setImageWithURL: photo.imageURL success:^(UIImage *image, BOOL cached) {
+    [photoImage setImageWithURL: photo.thumbnailURL success:^(UIImage *image, BOOL cached) {
         dispatch_async(dispatch_get_main_queue(), ^{
             photoImage.image = image;
             indicator.hidden = YES;

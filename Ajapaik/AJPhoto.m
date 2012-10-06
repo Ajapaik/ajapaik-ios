@@ -15,7 +15,7 @@
 @synthesize cityID = _cityID;
 @synthesize description = _description;
 @synthesize imageURL = _imageURL;
-@synthesize thumnailURL = _thumnailURL;
+@synthesize thumbnailURL = _thumbnailURL;
 
 
 -(id)initWithNSDictionary:(NSDictionary *)data {
@@ -27,7 +27,7 @@
         _cityID = [self intForElemName:@"city_id" inData:data];
         _description = [self stringForElemName:@"description" inData:data];
         _imageURL = [NSURL URLWithString:[self stringForElemName:@"image_url" inData:data]];
-//        _thumnailURL = 
+        _thumbnailURL = [NSURL URLWithString:[self stringForElemName:@"image_thumb" inData:data]];
     }
     return self;
 }
