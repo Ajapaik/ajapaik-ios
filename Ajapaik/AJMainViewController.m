@@ -7,10 +7,15 @@
 //
 
 #import "AJMainViewController.h"
+#import "AJCameraOverlayViewController.h"
 #import "AJPhoto.h"
 #import "JSONKit.h"
 
 @interface AJMainViewController ()
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) AJPhoto *photo;
+
 -(void) mapButtonClicked;
 -(void) loadImages;
 -(void) photosArrived:(NSArray *) photos;
@@ -133,20 +138,59 @@
         [_tableViewController setPhotos: photos];
     }
     else {
-        if (self.mapViewController == nil) {
-            self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
-            self.mapViewController.delegate = self;
-        }
-        [_mapViewController setPhotos: photos];
+        [self.mapViewController setPhotos:photos];
     }
 }
 
 
 #pragma mark - AJMainSubViewDelegate
 
--(void) photoChoosen:(AJPhoto *)photo
+-(void)photoChoosen:(AJPhoto *)photo
 {
-    //TODO: Here should be started photo view
+	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
+	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+	picker.showsCameraControls = YES;
+	picker.wantsFullScreenLayout = YES;
+	picker.allowsEditing = NO;
+	picker.cameraOverlayView = self.cameraOverlayViewController.view;
+	
+	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:photo.ID]];
+	
+	self.locationManager = [[CLLocationManager alloc] init];
+	[self.locationManager startUpdatingLocation];
+	[self.locationManager startUpdatingHeading];
+	
+	self.photo = photo;
+	
+	[self presentModalViewController:picker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	NSString *filename = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
+	
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+	[UIImageJPEGRepresentation(image, 1.0) writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
+	
+	CLLocation *location = self.locationManager.location;
+	CLHeading *heading = self.locationManager.heading;
+	
+	NSString *text = [NSString stringWithFormat:@"ID: %d, lat: %.6f, lon: %.6f, heading: %.2f",
+					  self.photo.ID,
+					  location.coordinate.latitude,
+					  location.coordinate.longitude,
+					  heading.trueHeading];
+	[text writeToFile:[path stringByAppendingPathExtension:@"txt"]
+		   atomically:YES
+			 encoding:NSUTF8StringEncoding
+				error:nil];
+	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end
