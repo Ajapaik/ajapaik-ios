@@ -18,6 +18,7 @@
 
 @property (nonatomic) BOOL userLocationCentered;
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) NSNumber *photoID;
 
 @end
 
@@ -87,11 +88,13 @@
 	
 	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
 	
-	[self presentModalViewController:picker animated:YES];
-	
 	self.locationManager = [[CLLocationManager alloc] init];
 	[self.locationManager startUpdatingLocation];
 	[self.locationManager startUpdatingHeading];
+	
+	self.photoID = [(AJPhotoAnnotation *)view.annotation ID];
+
+	[self presentModalViewController:picker animated:YES];
     
     //TODO: put here this code to load photo view 
     //[self.delegate photoChoosen:[(AJPhotoAnnotation *) view.annotation photo]];
@@ -110,7 +113,8 @@
 	CLLocation *location = self.locationManager.location;
 	CLHeading *heading = self.locationManager.heading;
 	
-	NSString *text = [NSString stringWithFormat:@"lat: %.6f, lon: %.6f, heading:%.2f",
+	NSString *text = [NSString stringWithFormat:@"ID: %@, lat: %.6f, lon: %.6f, heading: %.2f",
+					  self.photoID,
 					  location.coordinate.latitude,
 					  location.coordinate.longitude,
 					  heading.trueHeading];

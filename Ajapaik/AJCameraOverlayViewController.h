@@ -16,6 +16,7 @@
 
 - (IBAction)pitch:(id)sender;
 - (IBAction)pan:(id)sender;
+- (IBAction)tap:(id)sender;
 - (void)loadPhotoWithID:(NSNumber *)ID;
 
 @end
