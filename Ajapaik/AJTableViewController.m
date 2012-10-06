@@ -61,6 +61,11 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 62;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_photos count];
@@ -93,6 +98,7 @@
     UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)[cell viewWithTag:4];
     [photoImage setImageWithURL: photo.imageURL success:^(UIImage *image, BOOL cached) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            photoImage.image = image;
             indicator.hidden = YES;
             [indicator stopAnimating];
         });

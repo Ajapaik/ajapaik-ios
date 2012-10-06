@@ -98,16 +98,11 @@
 	if (!view) {
 		view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"photo"];
 		view.canShowCallout = YES;
-//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.ajapaik.ee/foto/%@/", [(AJPhotoAnnotation*) annotation ID]]];
-//        NSLog(@"%@", url);
-//        UIImageView *thumbnailView = [[UIImageView alloc] init];
-//        [thumbnailView setFrame:CGRectMake(0, 0, 30, 30)];
-//        [thumbnailView setImageWithURL:url success:^(UIImage *image, BOOL cached) {
-//            thumbnailView.image = image;
-//        } failure:^(NSError *error) {
-//            //do nothing here
-//        }];
-//        view.leftCalloutAccessoryView = thumbnailView;
+        UIImageView *thumbnailView = [[UIImageView alloc] init];
+        [thumbnailView setFrame:CGRectMake(0, 0, 30, 30)];
+        NSURL *url = [(AJPhotoAnnotation *) annotation photo].imageURL;
+        [thumbnailView setImageWithURL: url];
+        view.leftCalloutAccessoryView = thumbnailView;
 		view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 	} else {
 		view.annotation = annotation;

@@ -9,7 +9,6 @@
 #import "AJMainViewController.h"
 #import "AJCameraOverlayViewController.h"
 #import "AJPhoto.h"
-#import "JSONKit.h"
 
 @interface AJMainViewController ()
 
@@ -107,7 +106,10 @@
 						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                if (data) {
                                    NSError *e = nil;
-                                   NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+                                   NSString *dataString = [[NSString alloc] initWithData:data
+                                                                             encoding:NSUTF8StringEncoding];
+                                   data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+                                   NSDictionary *jsonDictionary = [NSJSONSerialization  JSONObjectWithData:data options: NSJSONReadingMutableContainers error: &e];
                                    NSMutableArray* photos = [[NSMutableArray alloc] init];
                                    if (!jsonDictionary) {
                                        NSLog(@"Error parsing JSON: %@", e);
