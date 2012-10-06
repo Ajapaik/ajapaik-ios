@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class AJPhotoPreviewView;
+
 @interface AJCameraOverlayViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate>
 
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
-@property (nonatomic, retain) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
-@property (nonatomic, retain) UIImagePickerController *imagePickerController;
+@property (nonatomic, retain) IBOutlet AJPhotoPreviewView *previewView;
 
 - (IBAction)pitch:(id)sender;
 - (IBAction)pan:(id)sender;

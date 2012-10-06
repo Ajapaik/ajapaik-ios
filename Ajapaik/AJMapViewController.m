@@ -82,7 +82,6 @@
 	picker.allowsEditing = NO;
 	picker.cameraOverlayView = self.cameraOverlayViewController.view;
 	
-	[self.cameraOverlayViewController setImagePickerController:picker];
 	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
 	
 	[self presentModalViewController:picker animated:YES];
