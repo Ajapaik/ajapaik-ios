@@ -7,6 +7,7 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "AJDetailViewController.h"
 #import "AJCameraOverlayViewController.h"
 
@@ -53,7 +54,12 @@
 
 - (void)reloadImages {
   if (self.oldPhotoObject != nil) {
-//    self.oldPhoto setImage:[[UIImage alloc] initwith]
+    [self.headline setText:self.oldPhotoObject.description];
+    [self.oldPhoto setImageWithURL:self.oldPhotoObject.imageURL success:^(UIImage *image, BOOL cached) {
+      self.oldPhoto.image = image;
+    } failure:^(NSError *error) {
+      //do nothing right now
+    }];
   }
 }
 
