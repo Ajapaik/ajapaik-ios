@@ -35,6 +35,8 @@
 		1710A65D161FA57F003D599B /* AJCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1710A65B161FA57F003D599B /* AJCameraViewController.m */; };
 		1710A65E161FA57F003D599B /* AJCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1710A65C161FA57F003D599B /* AJCameraViewController.xib */; };
 		1710A664161FB0BA003D599B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A663161FB0BA003D599B /* AVFoundation.framework */; };
+		5BDD40171620478000B02EAD /* AJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD40151620478000B02EAD /* AJDetailViewController.m */; };
+		5BDD40181620478000B02EAD /* AJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD40161620478000B02EAD /* AJDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		1710A65B161FA57F003D599B /* AJCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJCameraViewController.m; sourceTree = "<group>"; };
 		1710A65C161FA57F003D599B /* AJCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJCameraViewController.xib; sourceTree = "<group>"; };
 		1710A663161FB0BA003D599B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5BDD40141620478000B02EAD /* AJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJDetailViewController.h; sourceTree = "<group>"; };
+		5BDD40151620478000B02EAD /* AJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJDetailViewController.m; sourceTree = "<group>"; };
+		5BDD40161620478000B02EAD /* AJDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,7 @@
 		0A09575D16202BFA00158B4F /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				5BDD4012162046AF00B02EAD /* DetailView */,
 				0A09575F16202C2400158B4F /* MapView */,
 				0A09575E16202C1000158B4F /* TableView */,
 				0A09574B1620120E00158B4F /* AJMainViewController.h */,
@@ -267,6 +273,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5BDD4012162046AF00B02EAD /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				5BDD40141620478000B02EAD /* AJDetailViewController.h */,
+				5BDD40151620478000B02EAD /* AJDetailViewController.m */,
+				5BDD40161620478000B02EAD /* AJDetailViewController.xib */,
+			);
+			name = DetailView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,6 +363,7 @@
 				0A09574F1620120E00158B4F /* AJMainViewController.xib in Resources */,
 				0A09575716201A1300158B4F /* PhotoTableViewCell.xib in Resources */,
 				0A09575C162023B800158B4F /* AJTableViewController.xib in Resources */,
+				5BDD40181620478000B02EAD /* AJDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +406,7 @@
 				0A09574E1620120E00158B4F /* AJMainViewController.m in Sources */,
 				0A09575B162023B800158B4F /* AJTableViewController.m in Sources */,
 				0A0957671620307000158B4F /* AJPhoto.m in Sources */,
+				5BDD40171620478000B02EAD /* AJDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
