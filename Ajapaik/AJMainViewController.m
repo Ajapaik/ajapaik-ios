@@ -102,12 +102,15 @@
 						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                if (data) {
                                    NSError *e = nil;
-                                   NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+                                   NSString *dataString = [[NSString alloc] initWithData:data
+                                                                             encoding:NSUTF8StringEncoding];
+                                   data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+                                   NSDictionary *jsonDictionary = [NSJSONSerialization  JSONObjectWithData:data options: NSJSONReadingMutableContainers error: &e];
                                    NSMutableArray* photos = [[NSMutableArray alloc] init];
                                    if (!jsonDictionary) {
                                        NSLog(@"Error parsing JSON: %@", e);
                                    } else {
-                                       NSArray* oldPhotos = [[jsonDictionary objectForKey:@"result"] objectForKey:@"result"];
+                                       NSArray* oldPhotos = [jsonDictionary objectForKey:@"result"];
                                        if (oldPhotos) {
                                            for (NSDictionary* photoData in oldPhotos) {
                                                [photos addObject:[[AJPhoto alloc] initWithNSDictionary:photoData]];
