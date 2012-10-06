@@ -16,6 +16,6 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic, retain) AJPhoto *photo;
 
-- (id)initWithString:(NSString *)string;
+- (id)initWithPhoto:(AJPhoto *)photo;
 
 @end

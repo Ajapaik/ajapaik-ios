@@ -16,4 +16,5 @@
 @property (nonatomic, assign) IBOutlet id<AJMainSubViewDelegate> delegate;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
+-(void) setPhotos:(NSArray *) photos;
 @end

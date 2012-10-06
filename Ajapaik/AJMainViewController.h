@@ -16,7 +16,7 @@
 @interface AJMainViewController : UIViewController <AJMainSubViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     @private
-    NSMutableArray *imageUrls;
+    NSArray *_oldPhotos;
 }
 @property (nonatomic, retain) IBOutlet AJMapViewController* mapViewController;
 @property (nonatomic, retain) IBOutlet AJCameraOverlayViewController *cameraOverlayViewController;

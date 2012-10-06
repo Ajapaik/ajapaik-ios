@@ -78,9 +78,9 @@
     AJPhoto *photo = [_photos objectAtIndex:indexPath.row];
     
     UILabel* cellNameLabel = (UILabel*)[cell viewWithTag:1];
-    cellNameLabel.text = photo.name;
+    cellNameLabel.text = [NSString stringWithFormat:@"%d", photo.ID];
     UILabel* cellAddressLabel = (UILabel*) [cell viewWithTag:2];
-    cellAddressLabel.text = photo.address;
+    cellAddressLabel.text = photo.description;
     
     /*UILabel* cellLocationLabel = (UILabel*) [cell viewWithTag:3];
      if(_userLocation)
