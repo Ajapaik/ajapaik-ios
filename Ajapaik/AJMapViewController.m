@@ -100,7 +100,7 @@
 		view.canShowCallout = YES;
         UIImageView *thumbnailView = [[UIImageView alloc] init];
         [thumbnailView setFrame:CGRectMake(0, 0, 30, 30)];
-        NSURL *url = [(AJPhotoAnnotation *) annotation photo].imageURL;
+        NSURL *url = [(AJPhotoAnnotation *) annotation photo].thumbnailURL;
         [thumbnailView setImageWithURL: url];
         view.leftCalloutAccessoryView = thumbnailView;
 		view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];

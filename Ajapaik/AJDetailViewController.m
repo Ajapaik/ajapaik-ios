@@ -39,9 +39,9 @@
 	picker.allowsEditing = NO;
 	picker.cameraOverlayView = self.cameraOverlayViewController.view;
 	
-//	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
+	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:[self.oldPhotoObject ID]]];
 	
-  //	[self presentModalViewController:picker animated:YES];
+  [self presentModalViewController:picker animated:YES];
 	
 //	self.locationManager = [[CLLocationManager alloc] init];
 //	[self.locationManager startUpdatingLocation];
