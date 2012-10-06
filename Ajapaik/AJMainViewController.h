@@ -11,7 +11,10 @@
 #import "AJTableViewController.h"
 
 @interface AJMainViewController : UIViewController
-
+{
+    @private
+    NSMutableArray *imageUrls;
+}
 @property (nonatomic,retain) AJMapViewController* mapViewController;
 @property (nonatomic,retain) AJTableViewController* tableViewController;
 

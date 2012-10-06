@@ -10,6 +10,7 @@
 
 @interface AJMainViewController ()
 -(void) mapButtonClicked;
+-(void) loadImages;
 @end
 
 @implementation AJMainViewController
@@ -44,8 +45,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 - (void)mapButtonClicked
 {
@@ -83,6 +82,30 @@
         [_mapViewController viewDidAppear:YES];
     }
     [UIView commitAnimations];
+}
+
+
+-(void) loadImages
+{
+//    NSURL *mapURL = [NSURL URLWithString:@"http://www.ajapaik.ee/kaart/?city=2"];
+//	NSURLRequest *request = [NSURLRequest requestWithURL:mapURL];
+//	[NSURLConnection sendAsynchronousRequest:request
+//                                       queue:[[NSOperationQueue alloc] init]
+//                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//                               if (data) {
+//                                   NSString *mapData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                                   NSRange start = [mapData rangeOfString:@"[["];
+//                                   NSRange end = [mapData rangeOfString:@"]]"];
+//                                   NSString *photos = [mapData substringWithRange:NSMakeRange(start.location + 2, end.location - start.location - 2)];
+//                                   
+//                                   dispatch_async(dispatch_get_main_queue(), ^{
+//                                       for (NSString *photo in [photos componentsSeparatedByString:@"], ["]) {
+//                                           NSLog(@"photo: %@", photo);
+//                                           [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithString:photo]];
+//                                       }
+//                                   });
+//                               }
+//                           }];
 }
 
 

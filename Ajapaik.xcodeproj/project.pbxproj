@@ -113,6 +113,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A09575D16202BFA00158B4F /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				0A09575F16202C2400158B4F /* MapView */,
+				0A09575E16202C1000158B4F /* TableView */,
+				0A09574B1620120E00158B4F /* AJMainViewController.h */,
+				0A09574C1620120E00158B4F /* AJMainViewController.m */,
+				0A09574D1620120E00158B4F /* AJMainViewController.xib */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		0A09575E16202C1000158B4F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				0A09575616201A1300158B4F /* PhotoTableViewCell.xib */,
+				0A095758162023B800158B4F /* AJTableViewController.h */,
+				0A095759162023B800158B4F /* AJTableViewController.m */,
+				0A09575A162023B800158B4F /* AJTableViewController.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		0A09575F16202C2400158B4F /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				0A09576116202C7F00158B4F /* AnnotationView */,
+				1710A64E161F9589003D599B /* AJMapViewController.h */,
+				1710A64F161F9589003D599B /* AJMapViewController.m */,
+				1710A650161F9589003D599B /* AJMapViewController.xib */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		0A09576016202C5900158B4F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A09576216202CA100158B4F /* CameraView */,
+				0A09575D16202BFA00158B4F /* MainView */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0A09576116202C7F00158B4F /* AnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				1710A657161F9C70003D599B /* AJPhotoAnnotation.h */,
+				1710A658161F9C70003D599B /* AJPhotoAnnotation.m */,
+			);
+			name = AnnotationView;
+			sourceTree = "<group>";
+		};
+		0A09576216202CA100158B4F /* CameraView */ = {
+			isa = PBXGroup;
+			children = (
+				1710A65A161FA57F003D599B /* AJCameraViewController.h */,
+				1710A65B161FA57F003D599B /* AJCameraViewController.m */,
+				1710A65C161FA57F003D599B /* AJCameraViewController.xib */,
+			);
+			name = CameraView;
+			sourceTree = "<group>";
+		};
 		1710A60A161F9551003D599B = {
 			isa = PBXGroup;
 			children = (
@@ -149,24 +211,10 @@
 		1710A61F161F9551003D599B /* Ajapaik */ = {
 			isa = PBXGroup;
 			children = (
+				0A09576016202C5900158B4F /* ViewControllers */,
 				1710A628161F9551003D599B /* AJAppDelegate.h */,
 				1710A629161F9551003D599B /* AJAppDelegate.m */,
 				1710A620161F9551003D599B /* Supporting Files */,
-				1710A64E161F9589003D599B /* AJMapViewController.h */,
-				1710A64F161F9589003D599B /* AJMapViewController.m */,
-				1710A650161F9589003D599B /* AJMapViewController.xib */,
-				1710A657161F9C70003D599B /* AJPhotoAnnotation.h */,
-				1710A658161F9C70003D599B /* AJPhotoAnnotation.m */,
-				1710A65A161FA57F003D599B /* AJCameraViewController.h */,
-				1710A65B161FA57F003D599B /* AJCameraViewController.m */,
-				1710A65C161FA57F003D599B /* AJCameraViewController.xib */,
-				0A09574B1620120E00158B4F /* AJMainViewController.h */,
-				0A09574C1620120E00158B4F /* AJMainViewController.m */,
-				0A09574D1620120E00158B4F /* AJMainViewController.xib */,
-				0A09575616201A1300158B4F /* PhotoTableViewCell.xib */,
-				0A095758162023B800158B4F /* AJTableViewController.h */,
-				0A095759162023B800158B4F /* AJTableViewController.m */,
-				0A09575A162023B800158B4F /* AJTableViewController.xib */,
 			);
 			path = Ajapaik;
 			sourceTree = "<group>";
