@@ -8,7 +8,6 @@
 
 #import "AJMainViewController.h"
 #import "AJPhoto.h"
-#import "JSONKit.h"
 
 @interface AJMainViewController ()
 -(void) mapButtonClicked;
