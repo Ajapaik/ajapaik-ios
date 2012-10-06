@@ -13,9 +13,9 @@
 - (id)initWithPhoto:(AJPhoto *)photo
 {
 	if ((self = [self init])) {
-		self.photo = photo;
-		self.title = [NSString stringWithFormat:@"%d", photo.ID];
+//		self.title = [NSString stringWithFormat:@"%d", photo.ID];
         self.photo = photo;
+		self.title = photo.description;
 		self.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
 	}
 	return self;

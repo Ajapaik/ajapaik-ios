@@ -99,7 +99,8 @@
 		view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"photo"];
 		view.canShowCallout = YES;
         UIImageView *thumbnailView = [[UIImageView alloc] init];
-        [thumbnailView setFrame:CGRectMake(0, 0, 30, 30)];
+        [thumbnailView setFrame:CGRectMake(0, 0, 30, 30
+										   )];
         NSURL *url = [(AJPhotoAnnotation *) annotation photo].thumbnailURL;
         [thumbnailView setImageWithURL: url];
         view.leftCalloutAccessoryView = thumbnailView;
