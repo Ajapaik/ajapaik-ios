@@ -9,5 +9,7 @@
 #import "AJPhoto.h"
 
 @implementation AJPhoto
-
+@synthesize imageURL;
+@synthesize name;
+@synthesize address;
 @end

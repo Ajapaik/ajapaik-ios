@@ -10,10 +10,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AJMainSubViewDelegate.h"
 
-@interface AJTableViewController : UITableViewController
+@interface AJTableViewController : UITableViewController<CLLocationManagerDelegate>
 {
+    @private
     id<AJMainSubViewDelegate> delegate;
+    CLLocationManager *_locationManager;
+    CLLocation *_userLocation;
+    NSArray *_photos;
 }
 
 @property (nonatomic, assign) id<AJMainSubViewDelegate> delegate;
+-(void) setPhotos:(NSArray *) photos;
 @end

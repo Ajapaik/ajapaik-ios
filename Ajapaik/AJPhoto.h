@@ -10,4 +10,7 @@
 
 @interface AJPhoto : NSObject
 
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *address;
+@property (nonatomic, retain) NSURL *imageURL;
 @end
