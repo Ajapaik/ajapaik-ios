@@ -8,6 +8,12 @@
 
 #import "AJPhotoPreviewView.h"
 
+@interface AJPhotoPreviewView ()
+
+@property (nonatomic) BOOL landscapeImage;
+
+@end
+
 @implementation AJPhotoPreviewView
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -21,9 +27,9 @@
 
 - (void)drawRect:(CGRect)rect
 {
-	CGContextRef context = UIGraphicsGetCurrentContext ();
-    CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
-    CGContextFillRect (context, self.frame);
+//	CGContextRef context = UIGraphicsGetCurrentContext();
+//	CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 0.0);
+//	CGContextFillRect (context, self.frame);
 	
 	CGSize viewSize = self.bounds.size;
 	CGSize imageSize = self.image.size;
@@ -39,6 +45,10 @@
 - (void)setImage:(UIImage *)image
 {
 	_image = image;
+	
+	CGSize size = image.size;
+	self.landscapeImage = size.width > size.height;
+	
 	[self setNeedsDisplay];
 }
 

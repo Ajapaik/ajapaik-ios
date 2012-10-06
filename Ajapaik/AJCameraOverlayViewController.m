@@ -88,7 +88,7 @@
 	
 	CGPoint translation = [panGestureRecognizer translationInView:self.previewView];
 	CGFloat length = translation.y;// sqrtf(translation.x * translation.x + translation.y * translation.y);
-	CGFloat delta = length / 150.0f;
+	CGFloat delta = length / 300.0f;
 	self.previewView.alpha = MIN(MAX(self.initialAlpha + delta, 0), 1.0f);
 }
 
