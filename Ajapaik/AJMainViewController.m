@@ -7,10 +7,17 @@
 //
 
 #import "AJMainViewController.h"
+#import "AJCameraOverlayViewController.h"
+#import "AJPhotoAnnotation.h"
 
 @interface AJMainViewController ()
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) AJPhoto *photo;
+
 -(void) mapButtonClicked;
 -(void) loadImages;
+
 @end
 
 @implementation AJMainViewController
@@ -31,12 +38,8 @@
     [super viewDidLoad];
     
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"LIST", @"List")style: UIBarButtonItemStyleBordered target:self action:@selector(mapButtonClicked)];
-    [self.navigationItem setRightBarButtonItem:mapButton animated:YES];
-    
-    if (self.mapViewController == nil) {
-        self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
-    }
-    [self.view insertSubview:_mapViewController.view atIndex:0];
+    [self.navigationItem setRightBarButtonItem:mapButton animated:YES];    
+    [self.view insertSubview:self.mapViewController.view atIndex:0];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -67,16 +70,12 @@
         [_tableViewController viewDidAppear:YES];
     }
     else {
-        if (self.mapViewController == nil) {
-            self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
-            self.mapViewController.delegate = self;
-        }
         [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft
                                forView:self.view cache:YES];
         [_mapViewController viewWillAppear:YES];
         [_tableViewController viewWillDisappear:YES];
         [_tableViewController.view removeFromSuperview];
-        [self.view insertSubview:_mapViewController.view atIndex:0];
+		[self.view insertSubview:self.mapViewController.view atIndex:0];
         self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"LIST", @"list");
         [_tableViewController viewDidDisappear:YES];
         [_mapViewController viewDidAppear:YES];
@@ -110,9 +109,52 @@
 
 #pragma mark - AJMainSubViewDelegate
 
--(void) photoChoosen:(AJPhoto *)photo
+- (void)photoChoosen:(AJPhoto *)photo
 {
-    //TODO: Here should be started photo view
+	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
+	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+	picker.showsCameraControls = YES;
+	picker.wantsFullScreenLayout = YES;
+	picker.allowsEditing = NO;
+	picker.cameraOverlayView = self.cameraOverlayViewController.view;
+	
+	[self.cameraOverlayViewController loadPhotoWithID:photo.ID];
+	
+	self.locationManager = [[CLLocationManager alloc] init];
+	[self.locationManager startUpdatingLocation];
+	[self.locationManager startUpdatingHeading];
+	
+	self.photo = photo;
+
+	[self presentModalViewController:picker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	NSString *filename = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
+	
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+	[UIImageJPEGRepresentation(image, 1.0) writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
+	
+	CLLocation *location = self.locationManager.location;
+	CLHeading *heading = self.locationManager.heading;
+	
+	NSString *text = [NSString stringWithFormat:@"ID: %@, lat: %.6f, lon: %.6f, heading: %.2f",
+					  self.photo.ID,
+					  location.coordinate.latitude,
+					  location.coordinate.longitude,
+					  heading.trueHeading];
+	[text writeToFile:[path stringByAppendingPathExtension:@"txt"]
+		   atomically:YES
+			 encoding:NSUTF8StringEncoding
+				error:nil];
+	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

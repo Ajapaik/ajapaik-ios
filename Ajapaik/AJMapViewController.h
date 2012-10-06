@@ -10,12 +10,10 @@
 #import <MapKit/MapKit.h>
 #import "AJMainSubViewDelegate.h"
 
-@class AJCameraOverlayViewController;
 
-@interface AJMapViewController : UIViewController <MKMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AJMapViewController : UIViewController <MKMapViewDelegate>
 
-@property (nonatomic, assign) id<AJMainSubViewDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<AJMainSubViewDelegate> delegate;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) IBOutlet AJCameraOverlayViewController *cameraOverlayViewController;
 
 @end

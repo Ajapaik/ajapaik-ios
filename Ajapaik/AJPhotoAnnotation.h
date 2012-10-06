@@ -14,7 +14,6 @@
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic) NSString *title;
-@property (nonatomic, retain) NSNumber *ID;
 @property (nonatomic, retain) AJPhoto *photo;
 
 - (id)initWithString:(NSString *)string;
