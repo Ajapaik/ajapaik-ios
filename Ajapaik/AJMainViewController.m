@@ -108,5 +108,11 @@
 //                           }];
 }
 
+#pragma mark - AJMainSubViewDelegate
+
+-(void) photoChoosen:(AJPhoto *)photo
+{
+    //TODO: Here should be started photo view
+}
 
 @end

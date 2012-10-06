@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AJMapViewController.h"
 #import "AJTableViewController.h"
+#import "AJMainSubViewDelegate.h"
 
-@interface AJMainViewController : UIViewController
+@interface AJMainViewController : UIViewController<AJMainSubViewDelegate>
 {
     @private
     NSMutableArray *imageUrls;

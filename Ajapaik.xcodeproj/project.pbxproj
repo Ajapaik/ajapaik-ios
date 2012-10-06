@@ -12,6 +12,7 @@
 		0A09575716201A1300158B4F /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A09575616201A1300158B4F /* PhotoTableViewCell.xib */; };
 		0A09575B162023B800158B4F /* AJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A095759162023B800158B4F /* AJTableViewController.m */; };
 		0A09575C162023B800158B4F /* AJTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A09575A162023B800158B4F /* AJTableViewController.xib */; };
+		0A0957671620307000158B4F /* AJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957661620307000158B4F /* AJPhoto.m */; };
 		1710A61A161F9551003D599B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A619161F9551003D599B /* UIKit.framework */; };
 		1710A61C161F9551003D599B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61B161F9551003D599B /* Foundation.framework */; };
 		1710A61E161F9551003D599B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61D161F9551003D599B /* CoreGraphics.framework */; };
@@ -54,6 +55,9 @@
 		0A095758162023B800158B4F /* AJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJTableViewController.h; sourceTree = "<group>"; };
 		0A095759162023B800158B4F /* AJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJTableViewController.m; sourceTree = "<group>"; };
 		0A09575A162023B800158B4F /* AJTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJTableViewController.xib; sourceTree = "<group>"; };
+		0A0957631620301E00158B4F /* AJMainSubViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJMainSubViewDelegate.h; sourceTree = "<group>"; };
+		0A0957651620307000158B4F /* AJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJPhoto.h; sourceTree = "<group>"; };
+		0A0957661620307000158B4F /* AJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhoto.m; sourceTree = "<group>"; };
 		1710A615161F9551003D599B /* Ajapaik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ajapaik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1710A619161F9551003D599B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1710A61B161F9551003D599B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +125,7 @@
 				0A09574B1620120E00158B4F /* AJMainViewController.h */,
 				0A09574C1620120E00158B4F /* AJMainViewController.m */,
 				0A09574D1620120E00158B4F /* AJMainViewController.xib */,
+				0A0957631620301E00158B4F /* AJMainSubViewDelegate.h */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -175,6 +180,15 @@
 			name = CameraView;
 			sourceTree = "<group>";
 		};
+		0A0957641620303800158B4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A0957651620307000158B4F /* AJPhoto.h */,
+				0A0957661620307000158B4F /* AJPhoto.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1710A60A161F9551003D599B = {
 			isa = PBXGroup;
 			children = (
@@ -212,9 +226,10 @@
 			isa = PBXGroup;
 			children = (
 				0A09576016202C5900158B4F /* ViewControllers */,
+				0A0957641620303800158B4F /* Model */,
+				1710A620161F9551003D599B /* Supporting Files */,
 				1710A628161F9551003D599B /* AJAppDelegate.h */,
 				1710A629161F9551003D599B /* AJAppDelegate.m */,
-				1710A620161F9551003D599B /* Supporting Files */,
 			);
 			path = Ajapaik;
 			sourceTree = "<group>";
@@ -373,6 +388,7 @@
 				1710A65D161FA57F003D599B /* AJCameraViewController.m in Sources */,
 				0A09574E1620120E00158B4F /* AJMainViewController.m in Sources */,
 				0A09575B162023B800158B4F /* AJTableViewController.m in Sources */,
+				0A0957671620307000158B4F /* AJPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
