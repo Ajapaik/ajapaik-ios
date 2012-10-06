@@ -8,7 +8,7 @@
 
 #import "AJMapViewController.h"
 #import "AJPhotoAnnotation.h"
-#import "AJCameraViewController.h"
+#import "AJCameraOverlayViewController.h"
 
 @interface AJMapViewController ()
 
@@ -69,8 +69,18 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
+	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+	picker.showsCameraControls = YES;
+	picker.wantsFullScreenLayout = YES;
+	picker.allowsEditing = NO;
+	picker.cameraOverlayView = self.cameraOverlayViewController.view;
+	
+	[self.cameraOverlayViewController setImagePickerController:picker];
 	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
-	[self presentModalViewController:self.cameraOverlayViewController animated:YES];
+	
+	[self presentModalViewController:picker animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
