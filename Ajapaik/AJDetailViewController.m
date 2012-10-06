@@ -7,6 +7,7 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "AJDetailViewController.h"
 #import "AJCameraOverlayViewController.h"
 
@@ -42,7 +43,8 @@
 	picker.allowsEditing = NO;
 	picker.cameraOverlayView = self.cameraOverlayViewController.view;
 	
-	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:self.oldPhotoObject.ID]];
+//	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:self.oldPhotoObject.ID]];
+  [self.cameraOverlayViewController loadPhoto:self.oldPhoto.image];
 	
 	self.locationManager = [[CLLocationManager alloc] init];
 	[self.locationManager startUpdatingLocation];
@@ -53,7 +55,12 @@
 
 - (void)reloadImages {
   if (self.oldPhotoObject != nil) {
-//    self.oldPhoto setImage:[[UIImage alloc] initwith]
+    [self.headline setText:self.oldPhotoObject.description];
+    [self.oldPhoto setImageWithURL:self.oldPhotoObject.imageURL success:^(UIImage *image, BOOL cached) {
+      self.oldPhoto.image = image;
+    } failure:^(NSError *error) {
+      //do nothing right now
+    }];
   }
 }
 

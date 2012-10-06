@@ -64,6 +64,13 @@
 						   }];
 }
 
+- (void)loadPhoto:(UIImage *)image
+{
+  self.previewView.image = image;
+  self.previewView.alpha = 0.5f;
+  self.previewView.zoomScale = 1.0f;
+}
+
 - (IBAction)pitch:(id)sender
 {
 	UIPinchGestureRecognizer *pinchGestureRecognizer = (UIPinchGestureRecognizer *)sender;
