@@ -13,7 +13,6 @@
 @interface AJTableViewController : UITableViewController<CLLocationManagerDelegate>
 {
     @private
-    id<AJMainSubViewDelegate> delegate;
     CLLocationManager *_locationManager;
     CLLocation *_userLocation;
     NSArray *_photos;
