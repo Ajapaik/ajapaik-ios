@@ -12,7 +12,7 @@
 
 @class AJCameraOverlayViewController;
 
-@interface AJMapViewController : UIViewController <MKMapViewDelegate>
+@interface AJMapViewController : UIViewController <MKMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) id<AJMainSubViewDelegate> delegate;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;

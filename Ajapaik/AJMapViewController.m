@@ -6,6 +6,7 @@
 //
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import "AJMapViewController.h"
 #import "AJPhotoAnnotation.h"
 #import "AJCameraOverlayViewController.h"
@@ -16,6 +17,7 @@
 @interface AJMapViewController ()
 
 @property (nonatomic) BOOL userLocationCentered;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end
 
@@ -75,6 +77,7 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
 	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
 	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 	picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
 	picker.showsCameraControls = YES;
@@ -85,9 +88,38 @@
 	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
 	
 	[self presentModalViewController:picker animated:YES];
+	
+	self.locationManager = [[CLLocationManager alloc] init];
+	[self.locationManager startUpdatingLocation];
+	[self.locationManager startUpdatingHeading];
     
     //TODO: put here this code to load photo view 
     //[self.delegate photoChoosen:[(AJPhotoAnnotation *) view.annotation photo]];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	NSString *filename = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
+	
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+	[UIImageJPEGRepresentation(image, 1.0) writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
+	
+	CLLocation *location = self.locationManager.location;
+	CLHeading *heading = self.locationManager.heading;
+	
+	NSString *text = [NSString stringWithFormat:@"lat: %.6f, lon: %.6f, heading:%.2f",
+					  location.coordinate.latitude,
+					  location.coordinate.longitude,
+					  heading.trueHeading];
+	[text writeToFile:[path stringByAppendingPathExtension:@"txt"]
+		   atomically:YES
+			 encoding:NSUTF8StringEncoding
+				error:nil];
+	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation

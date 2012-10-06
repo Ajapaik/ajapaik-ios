@@ -39,11 +39,6 @@
   // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-	return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
-}
-
 - (void)loadPhotoWithID:(NSNumber *)ID
 {
 	self.previewView.image = nil;
@@ -66,11 +61,6 @@
 							   }];
 							   NSLog(@"%@", photoURL);
 						   }];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-	
 }
 
 - (IBAction)pitch:(id)sender

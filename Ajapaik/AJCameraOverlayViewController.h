@@ -10,7 +10,7 @@
 
 @class AJPhotoPreviewView;
 
-@interface AJCameraOverlayViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate>
+@interface AJCameraOverlayViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, retain) IBOutlet AJPhotoPreviewView *previewView;
 
