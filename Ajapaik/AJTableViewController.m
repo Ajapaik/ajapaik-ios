@@ -137,16 +137,16 @@
     [self.tableView reloadData];
 }
 
--(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSString *errorType = (error.code == kCLErrorDenied) ? @"Access Denied" : @"Unknown Error";
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting Location"
-                                                    message:errorType
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Okay"
-                                          otherButtonTitles:nil];
-    [alert show];
-    [self.tableView reloadData];
-}
+//-(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+//{
+//    NSString *errorType = (error.code == kCLErrorDenied) ? @"Access Denied" : @"Unknown Error";
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting Location"
+//                                                    message:errorType
+//                                                   delegate:nil
+//                                          cancelButtonTitle:@"Okay"
+//                                          otherButtonTitles:nil];
+//    [alert show];
+//    [self.tableView reloadData];
+//}
 
 @end

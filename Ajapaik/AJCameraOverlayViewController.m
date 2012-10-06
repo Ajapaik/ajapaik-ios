@@ -22,7 +22,7 @@
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    // Custom initialization
+	  self.wantsFullScreenLayout = YES;
   }
   return self;
 }
@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.wantsFullScreenLayout = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +56,8 @@
 								   UIImage *image = [UIImage imageWithData:data];
 								   dispatch_async(dispatch_get_main_queue(), ^{
 									   self.previewView.image = image;
+									   self.previewView.alpha = 0.5f;
+									   self.previewView.zoomScale = 1.0f;
 								   });
 							   }];
 							   NSLog(@"%@", photoURL);
