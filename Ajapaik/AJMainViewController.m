@@ -41,11 +41,8 @@
     [self.navigationItem setRightBarButtonItem:mapButton animated:YES];
     [self loadImages];
     
-    if (self.mapViewController == nil) {
-        self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
-    }
+	self.mapViewController.view.frame = self.view.bounds;
     [self.view insertSubview:_mapViewController.view atIndex:0];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,10 +75,6 @@
         [_tableViewController viewDidAppear:YES];
     }
     else {
-        if (self.mapViewController == nil) {
-            self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
-            self.mapViewController.delegate = self;
-        }
         [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft
                                forView:self.view cache:YES];
         [_mapViewController viewWillAppear:YES];
