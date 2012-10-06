@@ -20,6 +20,7 @@
 @end
 
 @implementation AJMapViewController
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,6 +86,9 @@
 	[self.cameraOverlayViewController loadPhotoWithID:[(AJPhotoAnnotation *)view.annotation ID]];
 	
 	[self presentModalViewController:picker animated:YES];
+    
+    //TODO: put here this code to load photo view 
+    //[self.delegate photoChoosen:[(AJPhotoAnnotation *) view.annotation photo]];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation

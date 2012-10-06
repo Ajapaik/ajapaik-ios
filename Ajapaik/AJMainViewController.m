@@ -53,8 +53,8 @@
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     if (self.tableViewController.view.superview == nil) {
         if (self.tableViewController == nil) {
-            //tableController.delegate = self;
             self.tableViewController = [[AJTableViewController alloc] initWithNibName:@"AJTableViewController" bundle:nil];
+            self.tableViewController.delegate = self;
         }
         [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight
                                forView:self.view cache:YES];
@@ -68,8 +68,8 @@
     }
     else {
         if (self.mapViewController == nil) {
-//            mapController.delegate = self;
             self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
+            self.mapViewController.delegate = self;
         }
         [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft
                                forView:self.view cache:YES];

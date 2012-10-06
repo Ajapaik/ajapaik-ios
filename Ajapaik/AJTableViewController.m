@@ -71,7 +71,8 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"PhotoTableViewCell" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     AJPhoto *photo = [_photos objectAtIndex:indexPath.row];
