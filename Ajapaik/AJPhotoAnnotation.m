@@ -10,15 +10,13 @@
 
 @implementation AJPhotoAnnotation
 
-- (id)initWithString:(NSString *)string
+- (id)initWithPhoto:(AJPhoto *)photo
 {
 	if ((self = [self init])) {
-		NSArray *components = [string componentsSeparatedByString:@", "];
-		self.title = [components objectAtIndex:0];
-		self.ID = [NSNumber numberWithInteger:[self.title integerValue]];
+		self.title = [NSString stringWithFormat:@"%d", photo.ID];
+		self.ID = [NSNumber numberWithInteger:photo.ID];
         
-		self.coordinate = CLLocationCoordinate2DMake([[components objectAtIndex:2] doubleValue],
-                                                 [[components objectAtIndex:1] doubleValue]);
+		self.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
 	}
 	return self;
 }

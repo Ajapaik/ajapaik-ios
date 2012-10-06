@@ -7,6 +7,7 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "AJMapViewController.h"
 #import "AJPhotoAnnotation.h"
 #import "AJCameraOverlayViewController.h"
@@ -36,28 +37,28 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-	self.mapView.showsUserLocation = YES;
+//	self.mapView.showsUserLocation = YES;
 	
-	NSURL *mapURL = [NSURL URLWithString:@"http://www.ajapaik.ee/kaart/?city=2"];
-	NSURLRequest *request = [NSURLRequest requestWithURL:mapURL];
-	[NSURLConnection sendAsynchronousRequest:request
-                                     queue:[[NSOperationQueue alloc] init]
-                         completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                           if (data) {
-                             NSString *mapData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                             NSRange start = [mapData rangeOfString:@"[["];
-                             NSRange end = [mapData rangeOfString:@"]]"];
-                             NSString *photos = [mapData substringWithRange:NSMakeRange(start.location + 2, end.location - start.location - 2)];
-                             
-                             dispatch_async(dispatch_get_main_queue(), ^{
-                               for (NSString *photo in [photos componentsSeparatedByString:@"], ["]) {
-                                 NSLog(@"photo: %@", photo);
-                                 [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithString:photo]];
-                               }
-                               [self zoomToFitMapAnnotations];
-                             });
-                           }
-                         }];
+//	NSURL *mapURL = [NSURL URLWithString:@"http://www.ajapaik.ee/kaart/?city=2"];
+//	NSURLRequest *request = [NSURLRequest requestWithURL:mapURL];
+//	[NSURLConnection sendAsynchronousRequest:request
+//                                     queue:[[NSOperationQueue alloc] init]
+//                         completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//                           if (data) {
+//                             NSString *mapData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                             NSRange start = [mapData rangeOfString:@"[["];
+//                             NSRange end = [mapData rangeOfString:@"]]"];
+//                             NSString *photos = [mapData substringWithRange:NSMakeRange(start.location + 2, end.location - start.location - 2)];
+//                             
+//                             dispatch_async(dispatch_get_main_queue(), ^{
+//                               for (NSString *photo in [photos componentsSeparatedByString:@"], ["]) {
+//                                 NSLog(@"photo: %@", photo);
+//                                 [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithString:photo]];
+//                               }
+//                               [self zoomToFitMapAnnotations];
+//                             });
+//                           }
+//                         }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +66,18 @@
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Actions
+
+-(void) setPhotos:(NSArray *)photos
+{
+    for (AJPhoto *photo in photos) {
+        [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithPhoto:(AJPhoto *) photo]];
+    }
+    [self zoomToFitMapAnnotations];
+}
+
+#pragma mark -  Map View
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -130,6 +143,16 @@
 	if (!view) {
 		view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"photo"];
 		view.canShowCallout = YES;
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.ajapaik.ee/foto/%@/", [(AJPhotoAnnotation*) annotation ID]]];
+//        NSLog(@"%@", url);
+//        UIImageView *thumbnailView = [[UIImageView alloc] init];
+//        [thumbnailView setFrame:CGRectMake(0, 0, 30, 30)];
+//        [thumbnailView setImageWithURL:url success:^(UIImage *image, BOOL cached) {
+//            thumbnailView.image = image;
+//        } failure:^(NSError *error) {
+//            //do nothing here
+//        }];
+//        view.leftCalloutAccessoryView = thumbnailView;
 		view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 	} else {
 		view.annotation = annotation;

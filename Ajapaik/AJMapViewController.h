@@ -18,4 +18,5 @@
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) IBOutlet AJCameraOverlayViewController *cameraOverlayViewController;
 
+-(void) setPhotos:(NSArray *) photos;
 @end

@@ -17,6 +17,6 @@
 @property (nonatomic, retain) NSNumber *ID;
 @property (nonatomic, retain) AJPhoto *photo;
 
-- (id)initWithString:(NSString *)string;
+- (id)initWithPhoto:(AJPhoto *)photo;
 
 @end

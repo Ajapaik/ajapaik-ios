@@ -10,7 +10,14 @@
 
 @interface AJPhoto : NSObject
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *address;
+- (id)initWithNSDictionary:(NSDictionary *) data;
+
+@property (nonatomic) int ID;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
+@property (nonatomic) int cityID;
+@property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSURL *imageURL;
+@property (nonatomic, retain) NSURL *thumnailURL;
+
 @end

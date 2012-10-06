@@ -14,7 +14,7 @@
 @interface AJMainViewController : UIViewController<AJMainSubViewDelegate>
 {
     @private
-    NSMutableArray *imageUrls;
+    NSArray *_oldPhotos;
 }
 @property (nonatomic,retain) AJMapViewController* mapViewController;
 @property (nonatomic,retain) AJTableViewController* tableViewController;

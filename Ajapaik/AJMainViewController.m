@@ -7,10 +7,13 @@
 //
 
 #import "AJMainViewController.h"
+#import "AJPhoto.h"
+#import "JSONKit.h"
 
 @interface AJMainViewController ()
 -(void) mapButtonClicked;
 -(void) loadImages;
+-(void) photosArrived:(NSArray *) photos;
 @end
 
 @implementation AJMainViewController
@@ -32,6 +35,7 @@
     
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"LIST", @"List")style: UIBarButtonItemStyleBordered target:self action:@selector(mapButtonClicked)];
     [self.navigationItem setRightBarButtonItem:mapButton animated:YES];
+    [self loadImages];
     
     if (self.mapViewController == nil) {
         self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
@@ -45,6 +49,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Actions
 
 - (void)mapButtonClicked
 {
@@ -61,6 +67,7 @@
         [_tableViewController viewWillAppear:YES];
         [_mapViewController viewWillDisappear:YES];
         [_mapViewController.view removeFromSuperview];
+        [_tableViewController setPhotos:_oldPhotos];
         [self.view insertSubview:_tableViewController.view atIndex:0];
         self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"MAP", @"Map");
         [_mapViewController viewDidDisappear:YES];
@@ -76,6 +83,7 @@
         [_mapViewController viewWillAppear:YES];
         [_tableViewController viewWillDisappear:YES];
         [_tableViewController.view removeFromSuperview];
+        [_mapViewController setPhotos:_oldPhotos];
         [self.view insertSubview:_mapViewController.view atIndex:0];
         self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"LIST", @"list");
         [_tableViewController viewDidDisappear:YES];
@@ -87,26 +95,52 @@
 
 -(void) loadImages
 {
-//    NSURL *mapURL = [NSURL URLWithString:@"http://www.ajapaik.ee/kaart/?city=2"];
-//	NSURLRequest *request = [NSURLRequest requestWithURL:mapURL];
-//	[NSURLConnection sendAsynchronousRequest:request
-//                                       queue:[[NSOperationQueue alloc] init]
-//                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-//                               if (data) {
-//                                   NSString *mapData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//                                   NSRange start = [mapData rangeOfString:@"[["];
-//                                   NSRange end = [mapData rangeOfString:@"]]"];
-//                                   NSString *photos = [mapData substringWithRange:NSMakeRange(start.location + 2, end.location - start.location - 2)];
-//                                   
-//                                   dispatch_async(dispatch_get_main_queue(), ^{
-//                                       for (NSString *photo in [photos componentsSeparatedByString:@"], ["]) {
-//                                           NSLog(@"photo: %@", photo);
-//                                           [self.mapView addAnnotation:[[AJPhotoAnnotation alloc] initWithString:photo]];
-//                                       }
-//                                   });
-//                               }
-//                           }];
+    NSURL *mapURL = [NSURL URLWithString:@"http://api.ajapaik.ee/?action=photo&city_id=2"];
+	NSURLRequest *request = [NSURLRequest requestWithURL:mapURL];
+    [NSURLConnection sendAsynchronousRequest:request
+									   queue:[[NSOperationQueue alloc] init]
+						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               if (data) {
+                                   NSError *e = nil;
+                                   NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+                                   NSMutableArray* photos = [[NSMutableArray alloc] init];
+                                   if (!jsonDictionary) {
+                                       NSLog(@"Error parsing JSON: %@", e);
+                                   } else {
+                                       NSArray* oldPhotos = [[jsonDictionary objectForKey:@"result"] objectForKey:@"result"];
+                                       if (oldPhotos) {
+                                           for (NSDictionary* photoData in oldPhotos) {
+                                               [photos addObject:[[AJPhoto alloc] initWithNSDictionary:photoData]];
+                                           }
+                                       }
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           [self photosArrived:photos];
+                                       });
+                                   }
+                               }
+                           }];
+
 }
+
+-(void) photosArrived:(NSArray*) photos
+{
+    _oldPhotos = photos;
+    if (self.tableViewController.view.superview != nil) {
+        if (self.tableViewController == nil) {
+            self.tableViewController = [[AJTableViewController alloc] initWithNibName:@"AJTableViewController" bundle:nil];
+            self.tableViewController.delegate = self;
+        }
+        [_tableViewController setPhotos: photos];
+    }
+    else {
+        if (self.mapViewController == nil) {
+            self.mapViewController = [[AJMapViewController alloc] initWithNibName:@"AJMapViewController"                                                      bundle:nil];
+            self.mapViewController.delegate = self;
+        }
+        [_mapViewController setPhotos: photos];
+    }
+}
+
 
 #pragma mark - AJMainSubViewDelegate
 
