@@ -110,9 +110,15 @@
 
 #pragma mark - AJMainSubViewDelegate
 
--(void) photoChoosen:(AJPhoto *)photo
-{
-    //TODO: Here should be started photo view
+- (void)photoChoosen:(AJPhoto *)photo {
+  //TODO: Here should be started photo view
+  if (self.detailViewController == nil) {
+    self.detailViewController = [[AJDetailViewController alloc] initWithNibName:@"AJDetailViewController" bundle:nil];
+    self.detailViewController.delegate = self;
+  }
+  [self.detailViewController setOldPhotoObject:photo];
+  [self.detailViewController reloadImages];
+  [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 @end
