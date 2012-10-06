@@ -44,6 +44,11 @@
 		5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B31620543500158B4F /* AJPhotoAnnotation.m */; };
 		5B493A8816205DE10038B76B /* AJCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0957AF1620542300158B4F /* AJCameraOverlayViewController.xib */; };
 		5B493A8916205DE70038B76B /* AJCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957AE1620542300158B4F /* AJCameraOverlayViewController.m */; };
+		5B493AB31620E4150038B76B /* Ajapaik_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AAE1620E4150038B76B /* Ajapaik_logo.png */; };
+		5B493AB41620E4150038B76B /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AAF1620E4150038B76B /* bg.jpg */; };
+		5B493AB51620E4150038B76B /* footer_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AB01620E4150038B76B /* footer_bg.jpg */; };
+		5B493AB61620E4150038B76B /* icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AB11620E4150038B76B /* icon_camera.png */; };
+		5B493AB71620E4150038B76B /* icon_camera_hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AB21620E4150038B76B /* icon_camera_hot.png */; };
 		5BDD40171620478000B02EAD /* AJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD40151620478000B02EAD /* AJDetailViewController.m */; };
 		5BDD40181620478000B02EAD /* AJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD40161620478000B02EAD /* AJDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -132,6 +137,11 @@
 		1710A663161FB0BA003D599B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		174F6690162054BE0058AF03 /* AJPhotoPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJPhotoPreviewView.h; sourceTree = "<group>"; };
 		174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhotoPreviewView.m; sourceTree = "<group>"; };
+		5B493AAE1620E4150038B76B /* Ajapaik_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ajapaik_logo.png; sourceTree = "<group>"; };
+		5B493AAF1620E4150038B76B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		5B493AB01620E4150038B76B /* footer_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footer_bg.jpg; sourceTree = "<group>"; };
+		5B493AB11620E4150038B76B /* icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_camera.png; sourceTree = "<group>"; };
+		5B493AB21620E4150038B76B /* icon_camera_hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_camera_hot.png; sourceTree = "<group>"; };
 		5BDD40141620478000B02EAD /* AJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJDetailViewController.h; sourceTree = "<group>"; };
 		5BDD40151620478000B02EAD /* AJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJDetailViewController.m; sourceTree = "<group>"; };
 		5BDD40161620478000B02EAD /* AJDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJDetailViewController.xib; sourceTree = "<group>"; };
@@ -255,6 +265,7 @@
 		1710A60A161F9551003D599B = {
 			isa = PBXGroup;
 			children = (
+				5B493AAD1620E4150038B76B /* Graphics */,
 				0A09579016204B7E00158B4F /* SDWebImage.xcodeproj */,
 				1710A61F161F9551003D599B /* Ajapaik */,
 				1710A63D161F9551003D599B /* AjapaikTests */,
@@ -332,6 +343,18 @@
 				1710A640161F9551003D599B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B493AAD1620E4150038B76B /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				5B493AAE1620E4150038B76B /* Ajapaik_logo.png */,
+				5B493AAF1620E4150038B76B /* bg.jpg */,
+				5B493AB01620E4150038B76B /* footer_bg.jpg */,
+				5B493AB11620E4150038B76B /* icon_camera.png */,
+				5B493AB21620E4150038B76B /* icon_camera_hot.png */,
+			);
+			path = Graphics;
 			sourceTree = "<group>";
 		};
 		5BDD4012162046AF00B02EAD /* DetailView */ = {
@@ -458,6 +481,11 @@
 				174F668416204C710058AF03 /* (null) in Resources */,
 				5B493A8616205C850038B76B /* AJMapViewController.xib in Resources */,
 				5B493A8816205DE10038B76B /* AJCameraOverlayViewController.xib in Resources */,
+				5B493AB31620E4150038B76B /* Ajapaik_logo.png in Resources */,
+				5B493AB41620E4150038B76B /* bg.jpg in Resources */,
+				5B493AB51620E4150038B76B /* footer_bg.jpg in Resources */,
+				5B493AB61620E4150038B76B /* icon_camera.png in Resources */,
+				5B493AB71620E4150038B76B /* icon_camera_hot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
