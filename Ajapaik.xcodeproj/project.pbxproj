@@ -41,6 +41,8 @@
 		5B493A8516205C740038B76B /* AJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B61620544600158B4F /* AJMapViewController.m */; };
 		5B493A8616205C850038B76B /* AJMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0957B71620544600158B4F /* AJMapViewController.xib */; };
 		5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B31620543500158B4F /* AJPhotoAnnotation.m */; };
+		5B493A8816205DE10038B76B /* AJCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0957AF1620542300158B4F /* AJCameraOverlayViewController.xib */; };
+		5B493A8916205DE70038B76B /* AJCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957AE1620542300158B4F /* AJCameraOverlayViewController.m */; };
 		5BDD40171620478000B02EAD /* AJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD40151620478000B02EAD /* AJDetailViewController.m */; };
 		5BDD40181620478000B02EAD /* AJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD40161620478000B02EAD /* AJDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -450,6 +452,7 @@
 				174F668116204A590058AF03 /* (null) in Resources */,
 				174F668416204C710058AF03 /* (null) in Resources */,
 				5B493A8616205C850038B76B /* AJMapViewController.xib in Resources */,
+				5B493A8816205DE10038B76B /* AJCameraOverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +498,7 @@
 				174F668316204C640058AF03 /* (null) in Sources */,
 				5B493A8516205C740038B76B /* AJMapViewController.m in Sources */,
 				5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */,
+				5B493A8916205DE70038B76B /* AJCameraOverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
