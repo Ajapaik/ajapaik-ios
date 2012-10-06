@@ -6,10 +6,13 @@
 //
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import "AJDetailViewController.h"
 #import "AJCameraOverlayViewController.h"
 
 @interface AJDetailViewController ()
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end
 
@@ -39,19 +42,45 @@
 	picker.allowsEditing = NO;
 	picker.cameraOverlayView = self.cameraOverlayViewController.view;
 	
-	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:[self.oldPhotoObject ID]]];
+	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:self.oldPhotoObject.ID]];
 	
-  [self presentModalViewController:picker animated:YES];
-	
-//	self.locationManager = [[CLLocationManager alloc] init];
-//	[self.locationManager startUpdatingLocation];
-//	[self.locationManager startUpdatingHeading];
+	self.locationManager = [[CLLocationManager alloc] init];
+	[self.locationManager startUpdatingLocation];
+	[self.locationManager startUpdatingHeading];
+
+	[self presentModalViewController:picker animated:YES];
 }
 
 - (void)reloadImages {
   if (self.oldPhotoObject != nil) {
 //    self.oldPhoto setImage:[[UIImage alloc] initwith]
   }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	NSString *filename = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
+	
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+	[UIImageJPEGRepresentation(image, 1.0) writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
+	
+	CLLocation *location = self.locationManager.location;
+	CLHeading *heading = self.locationManager.heading;
+	
+	NSString *text = [NSString stringWithFormat:@"ID: %d, lat: %.6f, lon: %.6f, heading: %.2f",
+                    self.oldPhotoObject.ID,
+                    location.coordinate.latitude,
+                    location.coordinate.longitude,
+                    heading.trueHeading];
+	[text writeToFile:[path stringByAppendingPathExtension:@"txt"]
+         atomically:YES
+           encoding:NSUTF8StringEncoding
+              error:nil];
+	
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

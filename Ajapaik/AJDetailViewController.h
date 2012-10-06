@@ -18,6 +18,7 @@
 @property (nonatomic, retain) IBOutlet AJCameraOverlayViewController *cameraOverlayViewController;
 @property (nonatomic,retain) AJPhoto *oldPhotoObject;
 @property (nonatomic,retain) AJPhoto *rePhotoObject;
+@property (nonatomic,retain) AJPhoto *takenPhotoObject;
 //@property (nonatomic,assign) id<CLLocationManager> *locationManager;
 @property (nonatomic,retain) IBOutlet UIImageView *oldPhoto;
 @property (nonatomic,retain) IBOutlet UIImageView *rePhoto;

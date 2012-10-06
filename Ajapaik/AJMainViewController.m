@@ -140,7 +140,7 @@
 
 #pragma mark - AJMainSubViewDelegate
 
-- (void)photoChoosen2:(AJPhoto *)photo {
+- (void)photoChoosen:(AJPhoto *)photo {
   //TODO: Here should be started photo view
   if (self.detailViewController == nil) {
     self.detailViewController = [[AJDetailViewController alloc] initWithNibName:@"AJDetailViewController" bundle:nil];
@@ -151,7 +151,7 @@
   [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
--(void)photoChoosen:(AJPhoto *)photo
+-(void)photoChoosen2:(AJPhoto *)photo
 {
 	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 	picker.delegate = self;
