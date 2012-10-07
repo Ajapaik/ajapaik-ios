@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+	self.navigationItem.title = @"Photo";
   // Do any additional setup after loading the view from its nib.
   UIImage *rawFrame = [UIImage imageNamed:@"photo_frame.png"];
   self.oldPhotoFrame.image = [rawFrame resizableImageWithCapInsets:UIEdgeInsetsMake(16, 16, 16, 16)];

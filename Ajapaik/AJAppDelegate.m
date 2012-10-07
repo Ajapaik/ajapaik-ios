@@ -16,6 +16,7 @@
 	UIViewController *viewController = [[AJMainViewController alloc] initWithNibName:@"AJMainViewController" bundle:nil];
   
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"TabBar.png"] forBarMetrics:UIBarMetricsDefault];
+	[[UINavigationBar appearance] setTintColor:[UIColor brownColor]];
 	
     self.mainNavigationController =  [[UINavigationController alloc] initWithRootViewController:viewController];
   

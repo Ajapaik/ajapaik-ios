@@ -57,7 +57,7 @@
 		5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B31620543500158B4F /* AJPhotoAnnotation.m */; };
 		5B493A8816205DE10038B76B /* AJCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0957AF1620542300158B4F /* AJCameraOverlayViewController.xib */; };
 		5B493A8916205DE70038B76B /* AJCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957AE1620542300158B4F /* AJCameraOverlayViewController.m */; };
-		5B493AB31620E4150038B76B /* Ajapaik_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AAE1620E4150038B76B /* Ajapaik_logo.png */; };
+		5B493AB31620E4150038B76B /* Ajapaik_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AAE1620E4150038B76B /* Ajapaik_logo@2x.png */; };
 		5B493AB41620E4150038B76B /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AAF1620E4150038B76B /* bg.jpg */; };
 		5B493AB51620E4150038B76B /* footer_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AB01620E4150038B76B /* footer_bg.jpg */; };
 		5B493AB61620E4150038B76B /* icon_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AB11620E4150038B76B /* icon_camera.png */; };
@@ -168,7 +168,7 @@
 		5B0FCB561621901E008D4367 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		5B0FCB631621A509008D4367 /* TabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBar.png; sourceTree = "<group>"; };
 		5B0FCB641621A509008D4367 /* TabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar@2x.png"; sourceTree = "<group>"; };
-		5B493AAE1620E4150038B76B /* Ajapaik_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ajapaik_logo.png; sourceTree = "<group>"; };
+		5B493AAE1620E4150038B76B /* Ajapaik_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ajapaik_logo@2x.png"; sourceTree = "<group>"; };
 		5B493AAF1620E4150038B76B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		5B493AB01620E4150038B76B /* footer_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footer_bg.jpg; sourceTree = "<group>"; };
 		5B493AB11620E4150038B76B /* icon_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_camera.png; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 		5B493AAD1620E4150038B76B /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				5B493AAE1620E4150038B76B /* Ajapaik_logo.png */,
+				5B493AAE1620E4150038B76B /* Ajapaik_logo@2x.png */,
 				5B493AAF1620E4150038B76B /* bg.jpg */,
 				5B493AB01620E4150038B76B /* footer_bg.jpg */,
 				5B493AB11620E4150038B76B /* icon_camera.png */,
@@ -536,7 +536,7 @@
 				174F668416204C710058AF03 /* (null) in Resources */,
 				5B493A8616205C850038B76B /* AJMapViewController.xib in Resources */,
 				5B493A8816205DE10038B76B /* AJCameraOverlayViewController.xib in Resources */,
-				5B493AB31620E4150038B76B /* Ajapaik_logo.png in Resources */,
+				5B493AB31620E4150038B76B /* Ajapaik_logo@2x.png in Resources */,
 				5B493AB41620E4150038B76B /* bg.jpg in Resources */,
 				5B493AB51620E4150038B76B /* footer_bg.jpg in Resources */,
 				5B493AB61620E4150038B76B /* icon_camera.png in Resources */,

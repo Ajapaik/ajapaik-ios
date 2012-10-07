@@ -37,12 +37,19 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"LIST", @"List")style: UIBarButtonItemStyleBordered target:self action:@selector(mapButtonClicked)];
-    [self.navigationItem setRightBarButtonItem:mapButton animated:YES];
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"List", @"List")style: UIBarButtonItemStyleBordered target:self action:@selector(mapButtonClicked)];
+    self.navigationItem.rightBarButtonItem = mapButton;
+	
+	UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Ajapaik_logo"]];
+	UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, logoView.frame.size.width + 180.0f, logoView.frame.size.height)];
+	[titleView addSubview:logoView];
+	
+	self.navigationItem.titleView = titleView;
     [self loadImages];
     
 	self.mapViewController.view.frame = self.view.bounds;
     [self.view insertSubview:_mapViewController.view atIndex:0];
+	self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +77,9 @@
         [_mapViewController.view removeFromSuperview];
         [_tableViewController setPhotos:_oldPhotos];
         [self.view insertSubview:_tableViewController.view atIndex:0];
-        self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"MAP", @"Map");
+        self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Map", @"Map");
+		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:nil];
+
         [_mapViewController viewDidDisappear:YES];
         [_tableViewController viewDidAppear:YES];
     }
@@ -82,7 +91,9 @@
         [_tableViewController.view removeFromSuperview];
         [_mapViewController setPhotos:_oldPhotos];
         [self.view insertSubview:_mapViewController.view atIndex:0];
-        self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"LIST", @"list");
+        self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"List", @"list");
+		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStylePlain target:self action:nil];
+
         [_tableViewController viewDidDisappear:YES];
         [_mapViewController viewDidAppear:YES];
     }
