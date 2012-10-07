@@ -16,6 +16,8 @@
 		0A09577B1620437D00158B4F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A09577A1620437D00158B4F /* CoreImage.framework */; };
 		0A09577D1620438A00158B4F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A09577C1620438A00158B4F /* ImageIO.framework */; };
 		0A0957A116204BA200158B4F /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A09579C16204B7F00158B4F /* libSDWebImageARC.a */; };
+		1702835E162169680066FC53 /* AJCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1702835C162169680066FC53 /* AJCameraViewController.m */; };
+		1702835F162169680066FC53 /* AJCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1702835D162169680066FC53 /* AJCameraViewController.xib */; };
 		1710A61A161F9551003D599B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A619161F9551003D599B /* UIKit.framework */; };
 		1710A61C161F9551003D599B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61B161F9551003D599B /* Foundation.framework */; };
 		1710A61E161F9551003D599B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61D161F9551003D599B /* CoreGraphics.framework */; };
@@ -117,6 +119,9 @@
 		0A0957B51620544600158B4F /* AJMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJMapViewController.h; sourceTree = "<group>"; };
 		0A0957B61620544600158B4F /* AJMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJMapViewController.m; sourceTree = "<group>"; };
 		0A0957B71620544600158B4F /* AJMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJMapViewController.xib; sourceTree = "<group>"; };
+		1702835B162169680066FC53 /* AJCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJCameraViewController.h; sourceTree = "<group>"; };
+		1702835C162169680066FC53 /* AJCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJCameraViewController.m; sourceTree = "<group>"; };
+		1702835D162169680066FC53 /* AJCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJCameraViewController.xib; sourceTree = "<group>"; };
 		1710A615161F9551003D599B /* Ajapaik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ajapaik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1710A619161F9551003D599B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1710A61B161F9551003D599B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -247,6 +252,9 @@
 				0A0957AD1620542300158B4F /* AJCameraOverlayViewController.h */,
 				0A0957AE1620542300158B4F /* AJCameraOverlayViewController.m */,
 				0A0957AF1620542300158B4F /* AJCameraOverlayViewController.xib */,
+				1702835B162169680066FC53 /* AJCameraViewController.h */,
+				1702835C162169680066FC53 /* AJCameraViewController.m */,
+				1702835D162169680066FC53 /* AJCameraViewController.xib */,
 			);
 			name = CameraView;
 			sourceTree = "<group>";
@@ -503,6 +511,7 @@
 				5B493ABC162138980038B76B /* Icon.png in Resources */,
 				5B493ABD162138980038B76B /* iTunesArtwork.png in Resources */,
 				5B493ABF1621754B0038B76B /* photo_frame.png in Resources */,
+				1702835F162169680066FC53 /* AJCameraViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +559,7 @@
 				5B493A8516205C740038B76B /* AJMapViewController.m in Sources */,
 				5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */,
 				5B493A8916205DE70038B76B /* AJCameraOverlayViewController.m in Sources */,
+				1702835E162169680066FC53 /* AJCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
