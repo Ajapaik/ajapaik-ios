@@ -17,6 +17,8 @@
 @interface AJMapViewController ()
 
 @property (nonatomic) BOOL userLocationCentered;
+@property (nonatomic) UIImage *iconCamera;
+@property (nonatomic) UIImage *iconCameraHot;
 
 @end
 
@@ -108,7 +110,8 @@
 	} else {
 		view.annotation = annotation;
 	}
-	return view;
+  view.image = [UIImage imageNamed:@"icon_camera.png"];
+  return view;
 }
 
 -(void)zoomToFitMapAnnotations

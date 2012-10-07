@@ -265,7 +265,6 @@
 		1710A60A161F9551003D599B = {
 			isa = PBXGroup;
 			children = (
-				5B493AAD1620E4150038B76B /* Graphics */,
 				0A09579016204B7E00158B4F /* SDWebImage.xcodeproj */,
 				1710A61F161F9551003D599B /* Ajapaik */,
 				1710A63D161F9551003D599B /* AjapaikTests */,
@@ -302,6 +301,7 @@
 		1710A61F161F9551003D599B /* Ajapaik */ = {
 			isa = PBXGroup;
 			children = (
+				5B493AAD1620E4150038B76B /* Graphics */,
 				0A09576016202C5900158B4F /* ViewControllers */,
 				0A0957641620303800158B4F /* Model */,
 				1710A620161F9551003D599B /* Supporting Files */,
@@ -354,7 +354,8 @@
 				5B493AB11620E4150038B76B /* icon_camera.png */,
 				5B493AB21620E4150038B76B /* icon_camera_hot.png */,
 			);
-			path = Graphics;
+			name = Graphics;
+			path = ../Graphics;
 			sourceTree = "<group>";
 		};
 		5BDD4012162046AF00B02EAD /* DetailView */ = {
