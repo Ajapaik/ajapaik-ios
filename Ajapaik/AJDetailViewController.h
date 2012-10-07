@@ -21,9 +21,11 @@
 @property (nonatomic,retain) AJPhoto *takenPhotoObject;
 //@property (nonatomic,assign) id<CLLocationManager> *locationManager;
 @property (nonatomic,retain) IBOutlet UIImageView *oldPhoto;
-@property (nonatomic,retain) IBOutlet UIImageView *rePhoto;
+//@property (nonatomic,retain) IBOutlet UIImageView *rePhoto;
+@property (nonatomic,retain) IBOutlet UIImageView *oldPhotoFrame;
+//@property (nonatomic,retain) IBOutlet UIImageView *rePhotoFrame;
 @property (nonatomic,retain) IBOutlet UILabel *headline;
-@property (nonatomic,retain) IBOutlet UILabel *description;
+//@property (nonatomic,retain) IBOutlet UILabel *description;
 @property (nonatomic,retain) IBOutlet UIButton *takePhoto;
 
 -(IBAction)takeThePhoto:(id)sender;
