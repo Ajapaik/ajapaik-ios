@@ -14,11 +14,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	UIViewController *viewController = [[AJMainViewController alloc] initWithNibName:@"AJMainViewController" bundle:nil];
+  
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"TabBar.png"] forBarMetrics:UIBarMetricsDefault];
 	
-    UINavigationController *mainNavigationController =  [[UINavigationController alloc] initWithRootViewController:viewController];
-    
+    self.mainNavigationController =  [[UINavigationController alloc] initWithRootViewController:viewController];
+  
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	self.window.rootViewController = mainNavigationController;
+    self.window.rootViewController = self.mainNavigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

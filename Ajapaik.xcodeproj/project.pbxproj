@@ -50,6 +50,8 @@
 		174F6692162054BE0058AF03 /* AJPhotoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */; };
 		5B0FCB5516219017008D4367 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0FCB5416219017008D4367 /* Icon.png */; };
 		5B0FCB571621901E008D4367 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0FCB561621901E008D4367 /* Icon@2x.png */; };
+		5B0FCB651621A509008D4367 /* TabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0FCB631621A509008D4367 /* TabBar.png */; };
+		5B0FCB661621A509008D4367 /* TabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0FCB641621A509008D4367 /* TabBar@2x.png */; };
 		5B493A8516205C740038B76B /* AJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B61620544600158B4F /* AJMapViewController.m */; };
 		5B493A8616205C850038B76B /* AJMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0957B71620544600158B4F /* AJMapViewController.xib */; };
 		5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B31620543500158B4F /* AJPhotoAnnotation.m */; };
@@ -164,6 +166,8 @@
 		174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhotoPreviewView.m; sourceTree = "<group>"; };
 		5B0FCB5416219017008D4367 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		5B0FCB561621901E008D4367 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		5B0FCB631621A509008D4367 /* TabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBar.png; sourceTree = "<group>"; };
+		5B0FCB641621A509008D4367 /* TabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabBar@2x.png"; sourceTree = "<group>"; };
 		5B493AAE1620E4150038B76B /* Ajapaik_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ajapaik_logo.png; sourceTree = "<group>"; };
 		5B493AAF1620E4150038B76B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		5B493AB01620E4150038B76B /* footer_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footer_bg.jpg; sourceTree = "<group>"; };
@@ -365,6 +369,8 @@
 				5B493ABA162138980038B76B /* iTunesArtwork.png */,
 				1702836E16218CF80066FC53 /* Footer.png */,
 				1702836F16218CF80066FC53 /* Footer@2x.png */,
+				5B0FCB631621A509008D4367 /* TabBar.png */,
+				5B0FCB641621A509008D4367 /* TabBar@2x.png */,
 				1702836A16218CEA0066FC53 /* Camera.png */,
 				1702836B16218CEA0066FC53 /* Camera@2x.png */,
 				17028372162196890066FC53 /* Cross.png */,
@@ -548,6 +554,8 @@
 				17028375162196890066FC53 /* Cross@2x.png in Resources */,
 				5B0FCB5516219017008D4367 /* Icon.png in Resources */,
 				5B0FCB571621901E008D4367 /* Icon@2x.png in Resources */,
+				5B0FCB651621A509008D4367 /* TabBar.png in Resources */,
+				5B0FCB661621A509008D4367 /* TabBar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
