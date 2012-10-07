@@ -33,6 +33,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
+  UIImage *rawFrame = [UIImage imageNamed:@"photo_frame.png"];
+  self.oldPhotoFrame.image = [rawFrame resizableImageWithCapInsets:UIEdgeInsetsMake(16, 16, 16, 16)];
+//  self.rePhotoFrame.image = [rawFrame resizableImageWithCapInsets:UIEdgeInsetsMake(16, 16, 16, 16)];
 }
 
 - (IBAction)takeThePhoto:(id)sender {  
@@ -80,6 +83,7 @@
 	NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
 	
 	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+//  [self.rePhoto setImage:image];
 	NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
 	[imageData writeToFile:[path stringByAppendingPathExtension:@"jpg"] atomically:YES];
 	

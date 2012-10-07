@@ -48,6 +48,8 @@
 		174F668316204C640058AF03 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		174F668416204C710058AF03 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		174F6692162054BE0058AF03 /* AJPhotoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */; };
+		5B0FCB5516219017008D4367 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0FCB5416219017008D4367 /* Icon.png */; };
+		5B0FCB571621901E008D4367 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B0FCB561621901E008D4367 /* Icon@2x.png */; };
 		5B493A8516205C740038B76B /* AJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B61620544600158B4F /* AJMapViewController.m */; };
 		5B493A8616205C850038B76B /* AJMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0957B71620544600158B4F /* AJMapViewController.xib */; };
 		5B493A8716205CA80038B76B /* AJPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0957B31620543500158B4F /* AJPhotoAnnotation.m */; };
@@ -61,6 +63,7 @@
 		5B493ABB162138980038B76B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AB8162138970038B76B /* Icon@2x.png */; };
 		5B493ABC162138980038B76B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493AB9162138980038B76B /* Icon.png */; };
 		5B493ABD162138980038B76B /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493ABA162138980038B76B /* iTunesArtwork.png */; };
+		5B493ABF1621754B0038B76B /* photo_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B493ABE162175490038B76B /* photo_frame.png */; };
 		5BDD40171620478000B02EAD /* AJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD40151620478000B02EAD /* AJDetailViewController.m */; };
 		5BDD40181620478000B02EAD /* AJDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD40161620478000B02EAD /* AJDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -159,6 +162,8 @@
 		1710A663161FB0BA003D599B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		174F6690162054BE0058AF03 /* AJPhotoPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJPhotoPreviewView.h; sourceTree = "<group>"; };
 		174F6691162054BE0058AF03 /* AJPhotoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhotoPreviewView.m; sourceTree = "<group>"; };
+		5B0FCB5416219017008D4367 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		5B0FCB561621901E008D4367 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		5B493AAE1620E4150038B76B /* Ajapaik_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ajapaik_logo.png; sourceTree = "<group>"; };
 		5B493AAF1620E4150038B76B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		5B493AB01620E4150038B76B /* footer_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footer_bg.jpg; sourceTree = "<group>"; };
@@ -167,6 +172,7 @@
 		5B493AB8162138970038B76B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		5B493AB9162138980038B76B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		5B493ABA162138980038B76B /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		5B493ABE162175490038B76B /* photo_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_frame.png; sourceTree = "<group>"; };
 		5BDD40141620478000B02EAD /* AJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJDetailViewController.h; sourceTree = "<group>"; };
 		5BDD40151620478000B02EAD /* AJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJDetailViewController.m; sourceTree = "<group>"; };
 		5BDD40161620478000B02EAD /* AJDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJDetailViewController.xib; sourceTree = "<group>"; };
@@ -294,6 +300,8 @@
 		1710A60A161F9551003D599B = {
 			isa = PBXGroup;
 			children = (
+				5B0FCB561621901E008D4367 /* Icon@2x.png */,
+				5B0FCB5416219017008D4367 /* Icon.png */,
 				0A09579016204B7E00158B4F /* SDWebImage.xcodeproj */,
 				1710A61F161F9551003D599B /* Ajapaik */,
 				1710A63D161F9551003D599B /* AjapaikTests */,
@@ -392,6 +400,7 @@
 				5B493AB01620E4150038B76B /* footer_bg.jpg */,
 				5B493AB11620E4150038B76B /* icon_camera.png */,
 				5B493AB21620E4150038B76B /* icon_camera_hot.png */,
+				5B493ABE162175490038B76B /* photo_frame.png */,
 			);
 			name = Graphics;
 			path = ../Graphics;
@@ -529,6 +538,7 @@
 				5B493ABB162138980038B76B /* Icon@2x.png in Resources */,
 				5B493ABC162138980038B76B /* Icon.png in Resources */,
 				5B493ABD162138980038B76B /* iTunesArtwork.png in Resources */,
+				5B493ABF1621754B0038B76B /* photo_frame.png in Resources */,
 				1702835F162169680066FC53 /* AJCameraViewController.xib in Resources */,
 				1702836C16218CEA0066FC53 /* Camera.png in Resources */,
 				1702836D16218CEA0066FC53 /* Camera@2x.png in Resources */,
@@ -536,6 +546,8 @@
 				1702837116218CF80066FC53 /* Footer@2x.png in Resources */,
 				17028374162196890066FC53 /* Cross.png in Resources */,
 				17028375162196890066FC53 /* Cross@2x.png in Resources */,
+				5B0FCB5516219017008D4367 /* Icon.png in Resources */,
+				5B0FCB571621901E008D4367 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
