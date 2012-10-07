@@ -59,6 +59,7 @@
 	
 	AJCameraViewController *cameraViewController = [[AJCameraViewController alloc] initWithNibName:@"AJCameraViewController" bundle:[NSBundle mainBundle]];
 	cameraViewController.image = self.oldPhoto.image;
+	cameraViewController.photoID = [NSNumber numberWithInt:self.oldPhotoObject.ID];
 	[self presentModalViewController:cameraViewController animated:YES];
 }
 
