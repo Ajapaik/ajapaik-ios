@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface AJCameraViewController : UIViewController
+@class AJPhotoPreviewView;
 
-@property (nonatomic, assign) IBOutlet UIView *cameraView;
+@interface AJCameraViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) IBOutlet UIView *cameraView;
+@property (nonatomic, retain) IBOutlet UIImageView *reviewView;
+@property (nonatomic, retain) IBOutlet AJPhotoPreviewView *previewView;
+
+- (IBAction)takePhoto:(id)sender;
+- (IBAction)cancel:(id)sender;
+- (IBAction)pitch:(id)sender;
+- (IBAction)pan:(id)sender;
+- (IBAction)tap:(id)sender;
 
 @end

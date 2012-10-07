@@ -8,6 +8,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AJCameraViewController.h"
 #import "AJDetailViewController.h"
 #import "AJCameraOverlayViewController.h"
 
@@ -34,28 +35,33 @@
   // Do any additional setup after loading the view from its nib.
 }
 
-- (IBAction)takeThePhoto:(id)sender {
-  
-	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-	picker.delegate = self;
-	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-	picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-	picker.showsCameraControls = YES;
-	picker.wantsFullScreenLayout = YES;
-	picker.allowsEditing = NO;
-	picker.cameraOverlayView = self.cameraOverlayViewController.view;
+- (IBAction)takeThePhoto:(id)sender {  
+//	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+//	picker.delegate = self;
+//	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//	picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+//	picker.showsCameraControls = YES;
+//	picker.wantsFullScreenLayout = YES;
+//	picker.allowsEditing = NO;
+//	picker.cameraOverlayView = self.cameraOverlayViewController.view;
+//	
+////	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:self.oldPhotoObject.ID]];
+//	[self.cameraOverlayViewController loadPhoto:self.oldPhoto.image];
+//	
+//	self.locationManager = [[CLLocationManager alloc] init];
+//	[self.locationManager startUpdatingLocation];
+//	[self.locationManager startUpdatingHeading];
+//
+//	[self presentModalViewController:picker animated:YES];
 	
-//	[self.cameraOverlayViewController loadPhotoWithID:[NSNumber numberWithInt:self.oldPhotoObject.ID]];
-  [self.cameraOverlayViewController loadPhoto:self.oldPhoto.image];
-	
-	self.locationManager = [[CLLocationManager alloc] init];
-	[self.locationManager startUpdatingLocation];
-	[self.locationManager startUpdatingHeading];
-
-	[self presentModalViewController:picker animated:YES];
+	AJCameraViewController *cameraViewController = [[AJCameraViewController alloc] initWithNibName:@"AJCameraViewController" bundle:[NSBundle mainBundle]];
+	cameraViewController.image = self.oldPhoto.image;
+	[self presentModalViewController:cameraViewController animated:YES];
 }
 
 - (void)reloadImages {
+	[self view];
+	
   if (self.oldPhotoObject != nil) {
     [self.headline setText:self.oldPhotoObject.description];
     [self.oldPhoto setImageWithURL:self.oldPhotoObject.imageURL success:^(UIImage *image, BOOL cached) {

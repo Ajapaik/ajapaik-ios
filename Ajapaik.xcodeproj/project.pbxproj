@@ -18,6 +18,13 @@
 		0A0957A116204BA200158B4F /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A09579C16204B7F00158B4F /* libSDWebImageARC.a */; };
 		1702835E162169680066FC53 /* AJCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1702835C162169680066FC53 /* AJCameraViewController.m */; };
 		1702835F162169680066FC53 /* AJCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1702835D162169680066FC53 /* AJCameraViewController.xib */; };
+		17028365162178280066FC53 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17028364162178280066FC53 /* CoreVideo.framework */; };
+		1702836C16218CEA0066FC53 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 1702836A16218CEA0066FC53 /* Camera.png */; };
+		1702836D16218CEA0066FC53 /* Camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1702836B16218CEA0066FC53 /* Camera@2x.png */; };
+		1702837016218CF80066FC53 /* Footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1702836E16218CF80066FC53 /* Footer.png */; };
+		1702837116218CF80066FC53 /* Footer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1702836F16218CF80066FC53 /* Footer@2x.png */; };
+		17028374162196890066FC53 /* Cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 17028372162196890066FC53 /* Cross.png */; };
+		17028375162196890066FC53 /* Cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17028373162196890066FC53 /* Cross@2x.png */; };
 		1710A61A161F9551003D599B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A619161F9551003D599B /* UIKit.framework */; };
 		1710A61C161F9551003D599B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61B161F9551003D599B /* Foundation.framework */; };
 		1710A61E161F9551003D599B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1710A61D161F9551003D599B /* CoreGraphics.framework */; };
@@ -121,6 +128,13 @@
 		1702835B162169680066FC53 /* AJCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJCameraViewController.h; sourceTree = "<group>"; };
 		1702835C162169680066FC53 /* AJCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJCameraViewController.m; sourceTree = "<group>"; };
 		1702835D162169680066FC53 /* AJCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJCameraViewController.xib; sourceTree = "<group>"; };
+		17028364162178280066FC53 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1702836A16218CEA0066FC53 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		1702836B16218CEA0066FC53 /* Camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera@2x.png"; sourceTree = "<group>"; };
+		1702836E16218CF80066FC53 /* Footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Footer.png; sourceTree = "<group>"; };
+		1702836F16218CF80066FC53 /* Footer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Footer@2x.png"; sourceTree = "<group>"; };
+		17028372162196890066FC53 /* Cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cross.png; sourceTree = "<group>"; };
+		17028373162196890066FC53 /* Cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cross@2x.png"; sourceTree = "<group>"; };
 		1710A615161F9551003D599B /* Ajapaik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ajapaik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1710A619161F9551003D599B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1710A61B161F9551003D599B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17028365162178280066FC53 /* CoreVideo.framework in Frameworks */,
 				0A0957A116204BA200158B4F /* libSDWebImageARC.a in Frameworks */,
 				0A09577D1620438A00158B4F /* ImageIO.framework in Frameworks */,
 				0A09577B1620437D00158B4F /* CoreImage.framework in Frameworks */,
@@ -308,6 +323,7 @@
 				1710A655161F968B003D599B /* CoreLocation.framework */,
 				1710A653161F9685003D599B /* MapKit.framework */,
 				1710A663161FB0BA003D599B /* AVFoundation.framework */,
+				17028364162178280066FC53 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -339,6 +355,12 @@
 				5B493AB8162138970038B76B /* Icon@2x.png */,
 				5B493AB9162138980038B76B /* Icon.png */,
 				5B493ABA162138980038B76B /* iTunesArtwork.png */,
+				1702836E16218CF80066FC53 /* Footer.png */,
+				1702836F16218CF80066FC53 /* Footer@2x.png */,
+				1702836A16218CEA0066FC53 /* Camera.png */,
+				1702836B16218CEA0066FC53 /* Camera@2x.png */,
+				17028372162196890066FC53 /* Cross.png */,
+				17028373162196890066FC53 /* Cross@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -508,6 +530,12 @@
 				5B493ABC162138980038B76B /* Icon.png in Resources */,
 				5B493ABD162138980038B76B /* iTunesArtwork.png in Resources */,
 				1702835F162169680066FC53 /* AJCameraViewController.xib in Resources */,
+				1702836C16218CEA0066FC53 /* Camera.png in Resources */,
+				1702836D16218CEA0066FC53 /* Camera@2x.png in Resources */,
+				1702837016218CF80066FC53 /* Footer.png in Resources */,
+				1702837116218CF80066FC53 /* Footer@2x.png in Resources */,
+				17028374162196890066FC53 /* Cross.png in Resources */,
+				17028375162196890066FC53 /* Cross@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
