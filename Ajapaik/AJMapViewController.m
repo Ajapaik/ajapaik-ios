@@ -111,6 +111,7 @@
 		view.annotation = annotation;
 	}
   view.image = [UIImage imageNamed:@"icon_camera.png"];
+  view.calloutOffset = CGPointMake(1.0f, 1.0f);
   return view;
 }
 
